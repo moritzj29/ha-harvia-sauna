@@ -24,6 +24,7 @@ from homeassistant.const import (
 )
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.restore_state import RestoreEntity
 
 from .const import DOMAIN
 from .coordinator import HarviaDeviceData, HarviaSaunaCoordinator
@@ -189,9 +190,14 @@ async def async_setup_entry(
     entities = []
     for device_id in coordinator.data.devices:
         for description in SENSOR_DESCRIPTIONS:
-            entities.append(
-                HarviaSensor(coordinator, device_id, description)
-            )
+            if description.key == "energy":
+                entities.append(
+                    HarviaEnergySensor(coordinator, device_id, description)
+                )
+            else:
+                entities.append(
+                    HarviaSensor(coordinator, device_id, description)
+                )
 
     async_add_entities(entities)
 
@@ -218,3 +224,28 @@ class HarviaSensor(HarviaBaseEntity, SensorEntity):
         if device is None:
             return None
         return self.entity_description.value_fn(device)
+
+
+class HarviaEnergySensor(HarviaSensor, RestoreEntity):
+    """Energy sensor with state restoration across HA restarts."""
+
+    async def async_added_to_hass(self) -> None:
+        """Restore last known energy value on startup."""
+        await super().async_added_to_hass()
+
+        last_state = await self.async_get_last_state()
+        if last_state is None or last_state.state in ("unknown", "unavailable"):
+            return
+
+        try:
+            restored_value = float(last_state.state)
+        except (ValueError, TypeError):
+            return
+
+        # Write restored value back to coordinator device data
+        device = self._get_device_data()
+        if device is not None and restored_value > device.energy_kwh:
+            device.energy_kwh = restored_value
+            _LOGGER.debug(
+                "Restored energy value: %.3f kWh", restored_value
+            )
