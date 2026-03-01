@@ -1,0 +1,141 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Bastu",
+        "description": "Ange dina inloggningsuppgifter för MyHarvia-appen.",
+        "data": {
+          "username": "E-post",
+          "password": "Lösenord"
+        }
+      },
+      "heater": {
+        "title": "Aggregatinställning",
+        "description": "Välj modell och effekt för din bastuugn. Detta hjälper till att visa rätt enhetsinformation och kan ändras senare.",
+        "data": {
+          "heater_model": "Aggregatmodell",
+          "heater_power": "Aggregateffekt (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Återautentisering av Harvia Bastu",
+        "description": "Ange dina uppdaterade MyHarvia-uppgifter.",
+        "data": {
+          "username": "E-post",
+          "password": "Lösenord"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Ogiltiga inloggningsuppgifter. Kontrollera din MyHarvia-appinloggning.",
+      "cannot_connect": "Kan inte ansluta till MyHarvia-molnet. Försök igen senare.",
+      "unknown": "Ett oväntat fel inträffade."
+    },
+    "abort": {
+      "already_configured": "Detta konto är redan konfigurerat.",
+      "reauth_successful": "Återautentisering lyckades."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termostat"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Ström"
+      },
+      "light": {
+        "name": "Belysning"
+      },
+      "fan": {
+        "name": "Fläkt"
+      },
+      "steamer": {
+        "name": "Ånggenerator"
+      },
+      "aroma": {
+        "name": "Arom"
+      },
+      "auto_light": {
+        "name": "Automatisk belysning"
+      },
+      "auto_fan": {
+        "name": "Automatisk fläkt"
+      },
+      "dehumidifier": {
+        "name": "Avfuktare"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Temperatur"
+      },
+      "humidity": {
+        "name": "Luftfuktighet"
+      },
+      "target_temperature": {
+        "name": "Måltemperatur"
+      },
+      "remaining_time": {
+        "name": "Återstående tid"
+      },
+      "heat_up_time": {
+        "name": "Uppvärmningstid"
+      },
+      "wifi_rssi": {
+        "name": "WiFi-signal"
+      },
+      "status_codes": {
+        "name": "Statuskoder"
+      },
+      "aroma_level": {
+        "name": "Aromnivå"
+      },
+      "ph1_relay_counter": {
+        "name": "Fas 1 relächcykler"
+      },
+      "ph2_relay_counter": {
+        "name": "Fas 2 relächcykler"
+      },
+      "ph3_relay_counter": {
+        "name": "Fas 3 relächcykler"
+      },
+      "heat_on_counter": {
+        "name": "Uppvärmningscykler"
+      },
+      "steam_on_counter": {
+        "name": "Ångcykler"
+      },
+      "power": {
+        "name": "Effekt"
+      },
+      "energy": {
+        "name": "Energiförbrukning"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Dörr"
+      },
+      "heat_on": {
+        "name": "Uppvärmning aktiv"
+      },
+      "steam_on": {
+        "name": "Ånga aktiv"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Mål-luftfuktighet"
+      },
+      "aroma_level_set": {
+        "name": "Aromnivå"
+      },
+      "on_time": {
+        "name": "Sessionslängd"
+      }
+    }
+  }
+}

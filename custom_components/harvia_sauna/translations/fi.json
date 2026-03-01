@@ -1,0 +1,141 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Sauna",
+        "description": "Syötä MyHarvia-sovelluksen kirjautumistiedot.",
+        "data": {
+          "username": "Sähköposti",
+          "password": "Salasana"
+        }
+      },
+      "heater": {
+        "title": "Kiukaan asetukset",
+        "description": "Valitse saunakiukaasi malli ja teho. Tämä auttaa näyttämään oikeat laitetiedot ja sitä voi muuttaa myöhemmin.",
+        "data": {
+          "heater_model": "Kiuasmalli",
+          "heater_power": "Kiukaan teho (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Harvia Sauna -uudelleentodennus",
+        "description": "Syötä päivitetyt MyHarvia-kirjautumistietosi.",
+        "data": {
+          "username": "Sähköposti",
+          "password": "Salasana"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Virheelliset kirjautumistiedot. Tarkista MyHarvia-sovelluksen kirjautumistiedot.",
+      "cannot_connect": "Yhteyttä MyHarvia-pilvipalveluun ei saada. Yritä myöhemmin uudelleen.",
+      "unknown": "Odottamaton virhe."
+    },
+    "abort": {
+      "already_configured": "Tämä tili on jo määritetty.",
+      "reauth_successful": "Uudelleentodennus onnistui."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termostaatti"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Virta"
+      },
+      "light": {
+        "name": "Valo"
+      },
+      "fan": {
+        "name": "Puhallin"
+      },
+      "steamer": {
+        "name": "Höyrystin"
+      },
+      "aroma": {
+        "name": "Tuoksu"
+      },
+      "auto_light": {
+        "name": "Automaattinen valo"
+      },
+      "auto_fan": {
+        "name": "Automaattinen puhallin"
+      },
+      "dehumidifier": {
+        "name": "Kuivain"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Lämpötila"
+      },
+      "humidity": {
+        "name": "Kosteus"
+      },
+      "target_temperature": {
+        "name": "Tavoitelämpötila"
+      },
+      "remaining_time": {
+        "name": "Jäljellä oleva aika"
+      },
+      "heat_up_time": {
+        "name": "Lämpenemisaika"
+      },
+      "wifi_rssi": {
+        "name": "WiFi-signaali"
+      },
+      "status_codes": {
+        "name": "Tilakoodit"
+      },
+      "aroma_level": {
+        "name": "Tuoksutaso"
+      },
+      "ph1_relay_counter": {
+        "name": "Vaihe 1 relekierrokset"
+      },
+      "ph2_relay_counter": {
+        "name": "Vaihe 2 relekierrokset"
+      },
+      "ph3_relay_counter": {
+        "name": "Vaihe 3 relekierrokset"
+      },
+      "heat_on_counter": {
+        "name": "Lämmityskierrokset"
+      },
+      "steam_on_counter": {
+        "name": "Höyrykierrokset"
+      },
+      "power": {
+        "name": "Teho"
+      },
+      "energy": {
+        "name": "Energiankulutus"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Ovi"
+      },
+      "heat_on": {
+        "name": "Lämmitys päällä"
+      },
+      "steam_on": {
+        "name": "Höyry päällä"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Tavoitekosteus"
+      },
+      "aroma_level_set": {
+        "name": "Tuoksutaso"
+      },
+      "on_time": {
+        "name": "Istunnon kesto"
+      }
+    }
+  }
+}

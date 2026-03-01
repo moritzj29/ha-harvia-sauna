@@ -1,0 +1,141 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia サウナ",
+        "description": "MyHarviaアプリの認証情報を入力してください。",
+        "data": {
+          "username": "メールアドレス",
+          "password": "パスワード"
+        }
+      },
+      "heater": {
+        "title": "ヒーター設定",
+        "description": "サウナヒーターのモデルと出力を選択してください。正しいデバイス情報の表示に使用され、後で変更できます。",
+        "data": {
+          "heater_model": "ヒーターモデル",
+          "heater_power": "ヒーター出力 (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Harvia サウナの再認証",
+        "description": "更新されたMyHarvia認証情報を入力してください。",
+        "data": {
+          "username": "メールアドレス",
+          "password": "パスワード"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "認証情報が無効です。MyHarviaアプリのログイン情報を確認してください。",
+      "cannot_connect": "MyHarviaクラウドに接続できません。後でもう一度お試しください。",
+      "unknown": "予期しないエラーが発生しました。"
+    },
+    "abort": {
+      "already_configured": "このアカウントは既に設定されています。",
+      "reauth_successful": "再認証に成功しました。"
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "サーモスタット"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "電源"
+      },
+      "light": {
+        "name": "照明"
+      },
+      "fan": {
+        "name": "ファン"
+      },
+      "steamer": {
+        "name": "スチーマー"
+      },
+      "aroma": {
+        "name": "アロマ"
+      },
+      "auto_light": {
+        "name": "自動照明"
+      },
+      "auto_fan": {
+        "name": "自動ファン"
+      },
+      "dehumidifier": {
+        "name": "除湿機"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "温度"
+      },
+      "humidity": {
+        "name": "湿度"
+      },
+      "target_temperature": {
+        "name": "設定温度"
+      },
+      "remaining_time": {
+        "name": "残り時間"
+      },
+      "heat_up_time": {
+        "name": "加熱時間"
+      },
+      "wifi_rssi": {
+        "name": "WiFi信号"
+      },
+      "status_codes": {
+        "name": "ステータスコード"
+      },
+      "aroma_level": {
+        "name": "アロマレベル"
+      },
+      "ph1_relay_counter": {
+        "name": "フェーズ1リレー回数"
+      },
+      "ph2_relay_counter": {
+        "name": "フェーズ2リレー回数"
+      },
+      "ph3_relay_counter": {
+        "name": "フェーズ3リレー回数"
+      },
+      "heat_on_counter": {
+        "name": "加熱サイクル数"
+      },
+      "steam_on_counter": {
+        "name": "スチームサイクル数"
+      },
+      "power": {
+        "name": "消費電力"
+      },
+      "energy": {
+        "name": "消費エネルギー"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "ドア"
+      },
+      "heat_on": {
+        "name": "加熱中"
+      },
+      "steam_on": {
+        "name": "スチーム稼働中"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "目標湿度"
+      },
+      "aroma_level_set": {
+        "name": "アロマレベル"
+      },
+      "on_time": {
+        "name": "セッション時間"
+      }
+    }
+  }
+}

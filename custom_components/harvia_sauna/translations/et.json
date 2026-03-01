@@ -1,0 +1,141 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Saun",
+        "description": "Sisesta oma MyHarvia rakenduse sisselogimisandmed.",
+        "data": {
+          "username": "E-post",
+          "password": "Parool"
+        }
+      },
+      "heater": {
+        "title": "Kerise seadistamine",
+        "description": "Vali oma saunakerise mudel ja võimsus. See aitab kuvada õiget seadmeteavet ja seda saab hiljem muuta.",
+        "data": {
+          "heater_model": "Kerise mudel",
+          "heater_power": "Kerise võimsus (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Harvia Sauna uuesti autentimine",
+        "description": "Sisesta oma uuendatud MyHarvia sisselogimisandmed.",
+        "data": {
+          "username": "E-post",
+          "password": "Parool"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Vigased sisselogimisandmed. Kontrolli oma MyHarvia rakenduse sisselogimist.",
+      "cannot_connect": "MyHarvia pilvega ei saa ühendust. Proovi hiljem uuesti.",
+      "unknown": "Ilmnes ootamatu viga."
+    },
+    "abort": {
+      "already_configured": "See konto on juba seadistatud.",
+      "reauth_successful": "Uuesti autentimine õnnestus."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termostaat"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Toide"
+      },
+      "light": {
+        "name": "Valgus"
+      },
+      "fan": {
+        "name": "Ventilaator"
+      },
+      "steamer": {
+        "name": "Aurigeneraator"
+      },
+      "aroma": {
+        "name": "Aroom"
+      },
+      "auto_light": {
+        "name": "Automaatne valgus"
+      },
+      "auto_fan": {
+        "name": "Automaatne ventilaator"
+      },
+      "dehumidifier": {
+        "name": "Õhukuivati"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Temperatuur"
+      },
+      "humidity": {
+        "name": "Õhuniiskus"
+      },
+      "target_temperature": {
+        "name": "Sihttemperatuur"
+      },
+      "remaining_time": {
+        "name": "Järelejäänud aeg"
+      },
+      "heat_up_time": {
+        "name": "Kuumenemisaeg"
+      },
+      "wifi_rssi": {
+        "name": "WiFi signaal"
+      },
+      "status_codes": {
+        "name": "Olekukoodid"
+      },
+      "aroma_level": {
+        "name": "Aroomi tase"
+      },
+      "ph1_relay_counter": {
+        "name": "Faas 1 relee tsüklid"
+      },
+      "ph2_relay_counter": {
+        "name": "Faas 2 relee tsüklid"
+      },
+      "ph3_relay_counter": {
+        "name": "Faas 3 relee tsüklid"
+      },
+      "heat_on_counter": {
+        "name": "Kütmistsüklid"
+      },
+      "steam_on_counter": {
+        "name": "Aurutsüklid"
+      },
+      "power": {
+        "name": "Võimsus"
+      },
+      "energy": {
+        "name": "Energiakulu"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Uks"
+      },
+      "heat_on": {
+        "name": "Kütmine aktiivne"
+      },
+      "steam_on": {
+        "name": "Aur aktiivne"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Siht-õhuniiskus"
+      },
+      "aroma_level_set": {
+        "name": "Aroomi tase"
+      },
+      "on_time": {
+        "name": "Seansi kestus"
+      }
+    }
+  }
+}
