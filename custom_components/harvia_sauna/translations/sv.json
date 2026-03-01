@@ -24,6 +24,14 @@
           "username": "E-post",
           "password": "Lösenord"
         }
+      },
+      "reconfigure": {
+        "title": "Konfigurera om Harvia Bastu",
+        "description": "Uppdatera bastuaggregatsmodell och effekt.",
+        "data": {
+          "heater_model": "Aggregatsmodell",
+          "heater_power": "Aggregatseffekt (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "Detta konto är redan konfigurerat.",
-      "reauth_successful": "Återautentisering lyckades."
+      "reauth_successful": "Återautentisering lyckades.",
+      "reconfigure_successful": "Omkonfigurering lyckades."
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "Energiförbrukning"
+      },
+      "last_session_duration": {
+        "name": "Senaste bastuns längd"
+      },
+      "last_session_max_temp": {
+        "name": "Senaste bastuns maxtemperatur"
+      },
+      "sessions_today": {
+        "name": "Bastubesök idag"
+      },
+      "temp_trend": {
+        "name": "Temperaturtrend"
       }
     },
     "binary_sensor": {

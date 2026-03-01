@@ -175,6 +175,39 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:lightning-bolt",
         value_fn=lambda d: d.energy_kwh,
     ),
+    # Session tracking
+    HarviaSensorDescription(
+        key="last_session_duration",
+        translation_key="last_session_duration",
+        native_unit_of_measurement=UnitOfTime.MINUTES,
+        device_class=SensorDeviceClass.DURATION,
+        icon="mdi:timer-check",
+        value_fn=lambda d: d.last_session_duration if d.last_session_duration > 0 else None,
+    ),
+    HarviaSensorDescription(
+        key="last_session_max_temp",
+        translation_key="last_session_max_temp",
+        native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+        device_class=SensorDeviceClass.TEMPERATURE,
+        icon="mdi:thermometer-high",
+        value_fn=lambda d: d.last_session_max_temp if d.last_session_max_temp > 0 else None,
+    ),
+    HarviaSensorDescription(
+        key="sessions_today",
+        translation_key="sessions_today",
+        icon="mdi:counter",
+        state_class=SensorStateClass.TOTAL,
+        value_fn=lambda d: d.sessions_today,
+    ),
+    HarviaSensorDescription(
+        key="temp_trend",
+        translation_key="temp_trend",
+        native_unit_of_measurement="°C/min",
+        icon="mdi:trending-up",
+        state_class=SensorStateClass.MEASUREMENT,
+        entity_registry_enabled_default=False,
+        value_fn=lambda d: d.temp_trend,
+    ),
 ]
 
 

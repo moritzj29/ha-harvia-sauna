@@ -24,6 +24,14 @@
           "username": "E-mail",
           "password": "Mot de passe"
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigurer Harvia Sauna",
+        "description": "Mettre à jour le modèle et la puissance du poêle.",
+        "data": {
+          "heater_model": "Modèle de poêle",
+          "heater_power": "Puissance du poêle (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "Ce compte est déjà configuré.",
-      "reauth_successful": "Réauthentification réussie."
+      "reauth_successful": "Réauthentification réussie.",
+      "reconfigure_successful": "Reconfiguration réussie."
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "Consommation d'énergie"
+      },
+      "last_session_duration": {
+        "name": "Durée dernière session"
+      },
+      "last_session_max_temp": {
+        "name": "Température max dernière session"
+      },
+      "sessions_today": {
+        "name": "Sessions aujourd'hui"
+      },
+      "temp_trend": {
+        "name": "Tendance température"
       }
     },
     "binary_sensor": {

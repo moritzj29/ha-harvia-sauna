@@ -24,6 +24,14 @@
           "username": "Sähköposti",
           "password": "Salasana"
         }
+      },
+      "reconfigure": {
+        "title": "Harvia Saunan uudelleenasetukset",
+        "description": "Päivitä kiuasmalli ja teho.",
+        "data": {
+          "heater_model": "Kiuasmalli",
+          "heater_power": "Kiukaan teho (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "Tämä tili on jo määritetty.",
-      "reauth_successful": "Uudelleentodennus onnistui."
+      "reauth_successful": "Uudelleentodennus onnistui.",
+      "reconfigure_successful": "Uudelleenmääritys onnistui."
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "Energiankulutus"
+      },
+      "last_session_duration": {
+        "name": "Viimeisen saunomisen kesto"
+      },
+      "last_session_max_temp": {
+        "name": "Viimeisen saunomisen enimmäislämpötila"
+      },
+      "sessions_today": {
+        "name": "Saunomiskerrat tänään"
+      },
+      "temp_trend": {
+        "name": "Lämpötilatrendi"
       }
     },
     "binary_sensor": {

@@ -24,6 +24,14 @@
           "username": "E-Mail",
           "password": "Passwort"
         }
+      },
+      "reconfigure": {
+        "title": "Harvia Sauna neu konfigurieren",
+        "description": "Kiuasmodell und Leistung ändern.",
+        "data": {
+          "heater_model": "Kiuasmodell",
+          "heater_power": "Kiuasleistung (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "Dieses Konto ist bereits konfiguriert.",
-      "reauth_successful": "Erneute Authentifizierung erfolgreich."
+      "reauth_successful": "Erneute Authentifizierung erfolgreich.",
+      "reconfigure_successful": "Neukonfiguration erfolgreich."
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "Energieverbrauch"
+      },
+      "last_session_duration": {
+        "name": "Letzte Sitzungsdauer"
+      },
+      "last_session_max_temp": {
+        "name": "Letzte Sitzung Maximaltemperatur"
+      },
+      "sessions_today": {
+        "name": "Sitzungen heute"
+      },
+      "temp_trend": {
+        "name": "Temperaturtrend"
       }
     },
     "binary_sensor": {

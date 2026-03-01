@@ -24,6 +24,14 @@
           "username": "E-post",
           "password": "Parool"
         }
+      },
+      "reconfigure": {
+        "title": "Harvia sauna ümberkonfigureerimine",
+        "description": "Uuenda kerise mudelit ja võimsust.",
+        "data": {
+          "heater_model": "Kerise mudel",
+          "heater_power": "Kerise võimsus (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "See konto on juba seadistatud.",
-      "reauth_successful": "Uuesti autentimine õnnestus."
+      "reauth_successful": "Uuesti autentimine õnnestus.",
+      "reconfigure_successful": "Ümberkonfigureerimine õnnestus."
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "Energiakulu"
+      },
+      "last_session_duration": {
+        "name": "Viimase seansi kestus"
+      },
+      "last_session_max_temp": {
+        "name": "Viimase seansi maksimaalne temperatuur"
+      },
+      "sessions_today": {
+        "name": "Tänased seansid"
+      },
+      "temp_trend": {
+        "name": "Temperatuuritrend"
       }
     },
     "binary_sensor": {

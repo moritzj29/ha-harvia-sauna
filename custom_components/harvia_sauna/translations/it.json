@@ -24,6 +24,14 @@
           "username": "E-mail",
           "password": "Password"
         }
+      },
+      "reconfigure": {
+        "title": "Riconfigura Harvia Sauna",
+        "description": "Aggiorna il modello e la potenza della stufa.",
+        "data": {
+          "heater_model": "Modello stufa",
+          "heater_power": "Potenza stufa (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "Questo account è già configurato.",
-      "reauth_successful": "Riautenticazione riuscita."
+      "reauth_successful": "Riautenticazione riuscita.",
+      "reconfigure_successful": "Riconfigurazione riuscita."
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "Consumo energetico"
+      },
+      "last_session_duration": {
+        "name": "Durata ultima sessione"
+      },
+      "last_session_max_temp": {
+        "name": "Temperatura massima ultima sessione"
+      },
+      "sessions_today": {
+        "name": "Sessioni oggi"
+      },
+      "temp_trend": {
+        "name": "Tendenza temperatura"
       }
     },
     "binary_sensor": {

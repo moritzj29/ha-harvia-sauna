@@ -154,6 +154,44 @@ class HarviaSaunaConfigFlow(ConfigFlow, domain=DOMAIN):
         """Handle re-authentication."""
         return await self.async_step_reauth_confirm()
 
+    async def async_step_reconfigure(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Handle reconfiguration of heater model and power."""
+        entry = self.hass.config_entries.async_get_entry(
+            self.context["entry_id"]
+        )
+        if not entry:
+            return self.async_abort(reason="unknown")
+
+        if user_input is not None:
+            updated_data = {**entry.data, **user_input}
+            self.hass.config_entries.async_update_entry(
+                entry, data=updated_data
+            )
+            # Reload is handled by _async_update_listener
+            return self.async_abort(reason="reconfigure_successful")
+
+        # Pre-fill with current values
+        current_model = entry.data.get(CONF_HEATER_MODEL, "other")
+        current_power = entry.data.get(CONF_HEATER_POWER, "10.8")
+
+        schema = vol.Schema(
+            {
+                vol.Required(
+                    CONF_HEATER_MODEL, default=current_model
+                ): vol.In(HEATER_MODELS),
+                vol.Required(
+                    CONF_HEATER_POWER, default=current_power
+                ): vol.In(HEATER_POWER_OPTIONS),
+            }
+        )
+
+        return self.async_show_form(
+            step_id="reconfigure",
+            data_schema=schema,
+        )
+
     async def async_step_reauth_confirm(
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:

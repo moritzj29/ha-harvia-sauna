@@ -43,12 +43,18 @@ class HarviaBaseEntity(CoordinatorEntity[HarviaSaunaCoordinator]):
         power_kw = config_data.get(CONF_HEATER_POWER, "")
         model_string = f"{model_name} {power_kw} kW" if power_kw else model_name
 
-        return DeviceInfo(
+        info = DeviceInfo(
             identifiers={(DOMAIN, self._device_id)},
             name=device_data.display_name if device_data else "Harvia Sauna",
             manufacturer=MANUFACTURER,
             model=model_string,
         )
+
+        # Add firmware version if available
+        if device_data and device_data.firmware_version:
+            info["sw_version"] = device_data.firmware_version
+
+        return info
 
     @property
     def available(self) -> bool:

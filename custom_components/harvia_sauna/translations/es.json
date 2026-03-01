@@ -24,6 +24,14 @@
           "username": "Correo electrónico",
           "password": "Contraseña"
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigurar Harvia Sauna",
+        "description": "Actualizar el modelo y la potencia del calentador.",
+        "data": {
+          "heater_model": "Modelo de calentador",
+          "heater_power": "Potencia del calentador (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "Esta cuenta ya está configurada.",
-      "reauth_successful": "Reautenticación exitosa."
+      "reauth_successful": "Reautenticación exitosa.",
+      "reconfigure_successful": "Reconfiguración exitosa."
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "Consumo de energía"
+      },
+      "last_session_duration": {
+        "name": "Duración última sesión"
+      },
+      "last_session_max_temp": {
+        "name": "Temperatura máxima última sesión"
+      },
+      "sessions_today": {
+        "name": "Sesiones hoy"
+      },
+      "temp_trend": {
+        "name": "Tendencia de temperatura"
       }
     },
     "binary_sensor": {

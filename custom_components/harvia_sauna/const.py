@@ -24,6 +24,13 @@ SCAN_INTERVAL_FALLBACK = 300  # 5 Minuten Fallback-Polling falls WebSocket ausf√
 CONF_HEATER_MODEL = "heater_model"
 CONF_HEATER_POWER = "heater_power"
 
+# HA Events
+EVENT_SESSION_START = f"{DOMAIN}_session_start"
+EVENT_SESSION_END = f"{DOMAIN}_session_end"
+
+# Services
+SERVICE_SET_SESSION = "set_session"
+
 # Heater models compatible with MyHarvia / Xenio WiFi
 HEATER_MODELS: dict[str, str] = {
     "kip": "Harvia KIP",

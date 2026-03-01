@@ -8,7 +8,6 @@ import logging
 import random
 import ssl
 import uuid
-from functools import partial
 from typing import Any, Callable
 
 import websockets
@@ -257,27 +256,43 @@ class HarviaWebSocket:
         id_token = await self._api.async_get_id_token()
 
         if self._endpoint == "data":
-            subscription_query = (
-                '{"query":"subscription Subscription($receiver: String!) '
-                "{\\n  onDataUpdates(receiver: $receiver) {\\n    item {\\n"
-                "      deviceId\\n      timestamp\\n      sessionId\\n"
-                "      type\\n      data\\n      __typename\\n    }\\n"
-                '    __typename\\n  }\\n}\\n",'
-                f'"variables":{{"receiver":"{self._receiver}"}}}}'
+            query_str = (
+                "subscription Subscription($receiver: String!) {\n"
+                "  onDataUpdates(receiver: $receiver) {\n"
+                "    item {\n"
+                "      deviceId\n"
+                "      timestamp\n"
+                "      sessionId\n"
+                "      type\n"
+                "      data\n"
+                "      __typename\n"
+                "    }\n"
+                "    __typename\n"
+                "  }\n"
+                "}\n"
             )
         else:  # device
-            subscription_query = (
-                '{"query":"subscription Subscription($receiver: String!) '
-                "{\\n  onStateUpdated(receiver: $receiver) {\\n"
-                "    desired\\n    reported\\n    timestamp\\n"
-                "    receiver\\n    __typename\\n  }\\n}\\n\","
-                f'"variables":{{"receiver":"{self._receiver}"}}}}'
+            query_str = (
+                "subscription Subscription($receiver: String!) {\n"
+                "  onStateUpdated(receiver: $receiver) {\n"
+                "    desired\n"
+                "    reported\n"
+                "    timestamp\n"
+                "    receiver\n"
+                "    __typename\n"
+                "  }\n"
+                "}\n"
             )
+
+        subscription_data = {
+            "query": query_str,
+            "variables": {"receiver": self._receiver},
+        }
 
         payload = {
             "id": self._subscription_id,
             "payload": {
-                "data": subscription_query,
+                "data": json.dumps(subscription_data),
                 "extensions": {
                     "authorization": {
                         "Authorization": id_token,

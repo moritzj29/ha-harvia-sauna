@@ -24,6 +24,14 @@
           "username": "メールアドレス",
           "password": "パスワード"
         }
+      },
+      "reconfigure": {
+        "title": "Harvia サウナの再設定",
+        "description": "ヒーターモデルと出力を更新してください。",
+        "data": {
+          "heater_model": "ヒーターモデル",
+          "heater_power": "ヒーター出力 (kW)"
+        }
       }
     },
     "error": {
@@ -33,7 +41,8 @@
     },
     "abort": {
       "already_configured": "このアカウントは既に設定されています。",
-      "reauth_successful": "再認証に成功しました。"
+      "reauth_successful": "再認証に成功しました。",
+      "reconfigure_successful": "再設定に成功しました。"
     }
   },
   "entity": {
@@ -113,6 +122,18 @@
       },
       "energy": {
         "name": "消費エネルギー"
+      },
+      "last_session_duration": {
+        "name": "前回セッション時間"
+      },
+      "last_session_max_temp": {
+        "name": "前回セッション最高温度"
+      },
+      "sessions_today": {
+        "name": "本日のセッション数"
+      },
+      "temp_trend": {
+        "name": "温度トレンド"
       }
     },
     "binary_sensor": {

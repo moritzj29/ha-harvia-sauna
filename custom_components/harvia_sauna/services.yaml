@@ -1,0 +1,38 @@
+set_session:
+  name: Set sauna session
+  description: Configure and start a sauna session with target temperature, duration, and power state in one call.
+  fields:
+    device_id:
+      name: Device ID
+      description: The Harvia device ID (e.g. from the device page).
+      required: true
+      example: "abc123def456"
+      selector:
+        text:
+    target_temp:
+      name: Target temperature
+      description: Target temperature in °C (40-110).
+      required: false
+      example: 80
+      selector:
+        number:
+          min: 40
+          max: 110
+          unit_of_measurement: "°C"
+    duration:
+      name: Duration
+      description: Session duration in minutes (1-720).
+      required: false
+      example: 60
+      selector:
+        number:
+          min: 1
+          max: 720
+          unit_of_measurement: "min"
+    active:
+      name: Active
+      description: Turn the heater on (true) or off (false).
+      required: false
+      example: true
+      selector:
+        boolean:

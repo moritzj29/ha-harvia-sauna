@@ -127,9 +127,41 @@ class HarviaApiClient:
         endpoints = await self.async_get_endpoints()
         url = endpoints[endpoint]["endpoint"]
 
-        async with session.post(url, json=query, headers=headers) as response:
-            data = await response.json()
-            return data
+        try:
+            async with session.post(url, json=query, headers=headers) as response:
+                if response.status in (401, 403):
+                    # Force token reset for next attempt
+                    self._token_data = None
+                    self._cognito = None
+                    raise HarviaAuthError(
+                        f"API returned HTTP {response.status}"
+                    )
+                if response.status >= 500:
+                    raise HarviaConnectionError(
+                        f"API server error: HTTP {response.status}"
+                    )
+                data = await response.json()
+
+                # Check for GraphQL-level auth errors
+                errors = data.get("errors", [])
+                for error in errors:
+                    err_type = error.get("errorType", "")
+                    if err_type in ("UnauthorizedException", "Unauthorized"):
+                        self._token_data = None
+                        self._cognito = None
+                        raise HarviaAuthError(
+                            f"GraphQL auth error: {error.get('message', err_type)}"
+                        )
+
+                return data
+        except HarviaAuthError:
+            raise
+        except Exception as err:
+            if "ClientConnectorError" in type(err).__name__:
+                raise HarviaConnectionError(
+                    f"Connection failed: {err}"
+                ) from err
+            raise
 
     async def async_get_user_data(self) -> dict:
         """Get current user details."""
