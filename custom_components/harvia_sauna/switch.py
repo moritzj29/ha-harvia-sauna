@@ -52,6 +52,7 @@ SWITCH_DESCRIPTIONS: list[HarviaSwitchDescription] = [
         state_attr="fan_on",
         icon_on="mdi:fan",
         icon_off="mdi:fan-off",
+        entity_registry_enabled_default=False,
     ),
     HarviaSwitchDescription(
         key="steamer",
@@ -60,6 +61,7 @@ SWITCH_DESCRIPTIONS: list[HarviaSwitchDescription] = [
         state_attr="steam_enabled",
         icon_on="mdi:weather-fog",
         icon_off="mdi:weather-fog",
+        entity_registry_enabled_default=False,
     ),
     HarviaSwitchDescription(
         key="aroma",
@@ -68,6 +70,7 @@ SWITCH_DESCRIPTIONS: list[HarviaSwitchDescription] = [
         state_attr="aroma_enabled",
         icon_on="mdi:flower",
         icon_off="mdi:flower-outline",
+        entity_registry_enabled_default=False,
     ),
     HarviaSwitchDescription(
         key="auto_light",
@@ -84,6 +87,7 @@ SWITCH_DESCRIPTIONS: list[HarviaSwitchDescription] = [
         state_attr="auto_fan",
         icon_on="mdi:fan-auto",
         icon_off="mdi:fan-auto",
+        entity_registry_enabled_default=False,
     ),
     HarviaSwitchDescription(
         key="dehumidifier",
@@ -92,6 +96,7 @@ SWITCH_DESCRIPTIONS: list[HarviaSwitchDescription] = [
         state_attr="dehumidifier_enabled",
         icon_on="mdi:air-humidifier",
         icon_off="mdi:air-humidifier-off",
+        entity_registry_enabled_default=False,
     ),
 ]
 

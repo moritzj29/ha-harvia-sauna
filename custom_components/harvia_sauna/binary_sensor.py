@@ -49,6 +49,7 @@ BINARY_SENSOR_DESCRIPTIONS: list[HarviaBinarySensorDescription] = [
         translation_key="steam_on",
         device_class=BinarySensorDeviceClass.RUNNING,
         icon="mdi:weather-fog",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.steam_on,
     ),
 ]

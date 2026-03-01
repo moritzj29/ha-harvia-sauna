@@ -56,6 +56,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         device_class=SensorDeviceClass.HUMIDITY,
         state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:water-percent",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.humidity,
     ),
     HarviaSensorDescription(
@@ -97,6 +98,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         translation_key="status_codes",
         entity_category=EntityCategory.DIAGNOSTIC,
         icon="mdi:information-outline",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.status_codes,
     ),
     HarviaSensorDescription(
@@ -105,6 +107,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         native_unit_of_measurement=PERCENTAGE,
         icon="mdi:flower",
         state_class=SensorStateClass.MEASUREMENT,
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.aroma_level,
     ),
     # Diagnostic relay counters
@@ -114,6 +117,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         entity_category=EntityCategory.DIAGNOSTIC,
         state_class=SensorStateClass.TOTAL_INCREASING,
         icon="mdi:counter",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.ph1_relay_counter,
     ),
     HarviaSensorDescription(
@@ -122,6 +126,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         entity_category=EntityCategory.DIAGNOSTIC,
         state_class=SensorStateClass.TOTAL_INCREASING,
         icon="mdi:counter",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.ph2_relay_counter,
     ),
     HarviaSensorDescription(
@@ -130,6 +135,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         entity_category=EntityCategory.DIAGNOSTIC,
         state_class=SensorStateClass.TOTAL_INCREASING,
         icon="mdi:counter",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.ph3_relay_counter,
     ),
     HarviaSensorDescription(
@@ -138,6 +144,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         entity_category=EntityCategory.DIAGNOSTIC,
         state_class=SensorStateClass.TOTAL_INCREASING,
         icon="mdi:counter",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.heat_on_counter,
     ),
     HarviaSensorDescription(
@@ -146,6 +153,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         entity_category=EntityCategory.DIAGNOSTIC,
         state_class=SensorStateClass.TOTAL_INCREASING,
         icon="mdi:counter",
+        entity_registry_enabled_default=False,
         value_fn=lambda d: d.steam_on_counter,
     ),
     HarviaSensorDescription(
