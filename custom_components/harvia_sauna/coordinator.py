@@ -145,21 +145,21 @@ class HarviaSaunaCoordinator(DataUpdateCoordinator[HarviaSaunaData]):
         self.api = api
 
     async def async_setup(self) -> None:
-        """Set up WebSocket connections for real-time updates."""
+        """Set up real-time push updates if supported by the provider."""
         await self.api.async_start_push_updates(self._async_handle_ws_update)
 
     async def async_shutdown(self) -> None:
-        """Shut down WebSocket connections."""
+        """Shut down push update connections."""
         await self.api.async_stop_push_updates()
 
     @property
     def websocket_connected(self) -> bool:
-        """Return True if any WebSocket connection is active."""
+        """Return True if any push connection is active."""
         return self.api.push_connected
 
     @property
     def websocket_connections_info(self) -> list[dict[str, Any]]:
-        """Return info about all WebSocket connections."""
+        """Return info about all push connections."""
         return self.api.push_connections_info
 
     async def _async_update_data(self) -> HarviaSaunaData:

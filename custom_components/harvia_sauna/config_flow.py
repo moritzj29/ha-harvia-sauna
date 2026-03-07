@@ -134,10 +134,9 @@ class HarviaSaunaConfigFlow(ConfigFlow, domain=DOMAIN):
             full_data = {**self._user_input, **user_input}
 
             # Use email as unique ID to prevent duplicate entries
-            unique_email = self._user_data.get("email") if self._user_data else None
-            unique_value = unique_email or self._user_input[CONF_USERNAME]
+            unique_value = self._user_data["email"]
             provider = self._user_input.get(CONF_API_PROVIDER, API_PROVIDER_MYHARVIA)
-            # Keep old unique-id shape for legacy provider, scope new provider IDs.
+            # Scope non-legacy providers to allow coexistence
             if provider != API_PROVIDER_MYHARVIA:
                 unique_value = f"{provider}:{unique_value}"
             await self.async_set_unique_id(unique_value)
@@ -293,7 +292,7 @@ class HarviaSaunaConfigFlow(ConfigFlow, domain=DOMAIN):
                 await api.async_authenticate()
 
                 if entry:
-                    # Keep provider and heater model/power from existing config
+                    # Keep provider, heater model/power from existing config
                     updated_data = {
                         **entry.data,
                         CONF_USERNAME: user_input[CONF_USERNAME],

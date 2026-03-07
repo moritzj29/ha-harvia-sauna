@@ -52,7 +52,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     username = entry.data[CONF_USERNAME]
     password = entry.data[CONF_PASSWORD]
 
-    # Create API client
+    # Create API client via provider factory
     provider = get_provider_from_entry_data(entry.data)
     api = create_api_client(hass, username, password, provider)
 
