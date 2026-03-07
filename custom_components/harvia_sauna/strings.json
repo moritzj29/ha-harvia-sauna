@@ -3,14 +3,15 @@
     "step": {
       "user": {
         "title": "Harvia Sauna",
-        "description": "Enter your MyHarvia app credentials.",
+        "description": "Select your controller type and enter your credentials.",
         "data": {
           "username": "Email",
-          "password": "Password"
+          "password": "Password",
+          "api_provider": "API Provider"
         }
       },
       "heater": {
-        "title": "Heater Setup",
+        "title": "Heater configuration",
         "description": "Select your sauna heater model and power rating. This helps display correct device information and can be changed later.",
         "data": {
           "heater_model": "Heater model",
@@ -19,21 +20,30 @@
       },
       "reauth_confirm": {
         "title": "Re-authenticate Harvia Sauna",
-        "description": "Please enter your updated MyHarvia credentials.",
+        "description": "Enter your updated MyHarvia credentials.",
         "data": {
           "username": "Email",
           "password": "Password"
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Harvia Sauna",
+        "description": "Update your heater model and power rating.",
+        "data": {
+          "heater_model": "Heater model",
+          "heater_power": "Heater power (kW)"
+        }
       }
     },
     "error": {
-      "invalid_auth": "Invalid credentials. Please check your MyHarvia app login.",
-      "cannot_connect": "Cannot connect to MyHarvia cloud. Please try again later.",
+      "invalid_auth": "Invalid credentials. Please verify your MyHarvia app login.",
+      "cannot_connect": "Cannot connect to the MyHarvia cloud. Please try again later.",
       "unknown": "An unexpected error occurred."
     },
     "abort": {
       "already_configured": "This account is already configured.",
-      "reauth_successful": "Re-authentication successful."
+      "reauth_successful": "Re-authentication was successful.",
+      "reconfigure_successful": "Reconfiguration was successful."
     }
   },
   "entity": {
@@ -94,25 +104,37 @@
         "name": "Aroma level"
       },
       "ph1_relay_counter": {
-        "name": "Phase 1 relay counter"
+        "name": "Phase 1 relay cycles"
       },
       "ph2_relay_counter": {
-        "name": "Phase 2 relay counter"
+        "name": "Phase 2 relay cycles"
       },
       "ph3_relay_counter": {
-        "name": "Phase 3 relay counter"
+        "name": "Phase 3 relay cycles"
       },
       "heat_on_counter": {
         "name": "Heater cycles"
       },
       "steam_on_counter": {
-        "name": "Steamer cycles"
+        "name": "Steam cycles"
       },
       "power": {
         "name": "Power"
       },
       "energy": {
-        "name": "Energy"
+        "name": "Energy consumption"
+      },
+      "last_session_duration": {
+        "name": "Last session duration"
+      },
+      "last_session_max_temp": {
+        "name": "Last session max temperature"
+      },
+      "sessions_today": {
+        "name": "Sessions today"
+      },
+      "temp_trend": {
+        "name": "Temperature trend"
       }
     },
     "binary_sensor": {
@@ -120,10 +142,10 @@
         "name": "Door"
       },
       "heat_on": {
-        "name": "Heater active"
+        "name": "Heating"
       },
       "steam_on": {
-        "name": "Steamer active"
+        "name": "Steam active"
       }
     },
     "number": {
@@ -134,7 +156,7 @@
         "name": "Aroma level"
       },
       "on_time": {
-        "name": "Session duration"
+        "name": "Session time"
       }
     }
   }

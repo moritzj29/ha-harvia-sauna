@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia 사우나",
+        "description": "컨트롤러 유형을 선택하고 자격 증명을 입력하세요.",
+        "data": {
+          "username": "이메일",
+          "password": "비밀번호",
+          "api_provider": "API 공급자"
+        }
+      },
+      "heater": {
+        "title": "히터 설정",
+        "description": "사우나 히터 모델과 출력을 선택하세요. 올바른 기기 정보를 표시하는 데 도움이 되며 나중에 변경할 수 있습니다.",
+        "data": {
+          "heater_model": "히터 모델",
+          "heater_power": "히터 출력 (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Harvia 사우나 재인증",
+        "description": "업데이트된 MyHarvia 자격 증명을 입력하세요.",
+        "data": {
+          "username": "이메일",
+          "password": "비밀번호"
+        }
+      },
+      "reconfigure": {
+        "title": "Harvia 사우나 재설정",
+        "description": "히터 모델과 출력을 업데이트하세요.",
+        "data": {
+          "heater_model": "히터 모델",
+          "heater_power": "히터 출력 (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "잘못된 자격 증명입니다. MyHarvia 앱 로그인을 확인하세요.",
+      "cannot_connect": "MyHarvia 클라우드에 연결할 수 없습니다. 나중에 다시 시도하세요.",
+      "unknown": "예상치 못한 오류가 발생했습니다."
+    },
+    "abort": {
+      "already_configured": "이 계정은 이미 설정되어 있습니다.",
+      "reauth_successful": "재인증에 성공했습니다.",
+      "reconfigure_successful": "재설정에 성공했습니다."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "온도 조절기"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "전원"
+      },
+      "light": {
+        "name": "조명"
+      },
+      "fan": {
+        "name": "팬"
+      },
+      "steamer": {
+        "name": "스팀 발생기"
+      },
+      "aroma": {
+        "name": "아로마"
+      },
+      "auto_light": {
+        "name": "자동 조명"
+      },
+      "auto_fan": {
+        "name": "자동 팬"
+      },
+      "dehumidifier": {
+        "name": "제습기"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "온도"
+      },
+      "humidity": {
+        "name": "습도"
+      },
+      "target_temperature": {
+        "name": "목표 온도"
+      },
+      "remaining_time": {
+        "name": "남은 시간"
+      },
+      "heat_up_time": {
+        "name": "예열 시간"
+      },
+      "wifi_rssi": {
+        "name": "WiFi 신호"
+      },
+      "status_codes": {
+        "name": "상태 코드"
+      },
+      "aroma_level": {
+        "name": "아로마 레벨"
+      },
+      "ph1_relay_counter": {
+        "name": "1상 릴레이 주기"
+      },
+      "ph2_relay_counter": {
+        "name": "2상 릴레이 주기"
+      },
+      "ph3_relay_counter": {
+        "name": "3상 릴레이 주기"
+      },
+      "heat_on_counter": {
+        "name": "가열 주기"
+      },
+      "steam_on_counter": {
+        "name": "스팀 주기"
+      },
+      "power": {
+        "name": "전력"
+      },
+      "energy": {
+        "name": "에너지 소비"
+      },
+      "last_session_duration": {
+        "name": "마지막 세션 시간"
+      },
+      "last_session_max_temp": {
+        "name": "마지막 세션 최고 온도"
+      },
+      "sessions_today": {
+        "name": "오늘 세션 수"
+      },
+      "temp_trend": {
+        "name": "온도 추세"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "도어"
+      },
+      "heat_on": {
+        "name": "가열 중"
+      },
+      "steam_on": {
+        "name": "스팀 작동 중"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "목표 습도"
+      },
+      "aroma_level_set": {
+        "name": "아로마 레벨"
+      },
+      "on_time": {
+        "name": "세션 시간"
+      }
+    }
+  }
+}

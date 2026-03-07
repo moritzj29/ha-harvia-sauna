@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Sauna",
+        "description": "Wybierz typ kontrolera i wprowadź dane logowania.",
+        "data": {
+          "username": "E-mail",
+          "password": "Hasło",
+          "api_provider": "Dostawca API"
+        }
+      },
+      "heater": {
+        "title": "Konfiguracja pieca",
+        "description": "Wybierz model i moc pieca do sauny. Pomaga to wyświetlać prawidłowe informacje o urządzeniu i można to zmienić później.",
+        "data": {
+          "heater_model": "Model pieca",
+          "heater_power": "Moc pieca (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponowna autoryzacja Harvia Sauna",
+        "description": "Wprowadź zaktualizowane dane logowania MyHarvia.",
+        "data": {
+          "username": "E-mail",
+          "password": "Hasło"
+        }
+      },
+      "reconfigure": {
+        "title": "Rekonfiguracja Harvia Sauna",
+        "description": "Zaktualizuj model i moc pieca.",
+        "data": {
+          "heater_model": "Model pieca",
+          "heater_power": "Moc pieca (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Nieprawidłowe dane logowania. Sprawdź login w aplikacji MyHarvia.",
+      "cannot_connect": "Nie można połączyć się z chmurą MyHarvia. Spróbuj ponownie później.",
+      "unknown": "Wystąpił nieoczekiwany błąd."
+    },
+    "abort": {
+      "already_configured": "To konto jest już skonfigurowane.",
+      "reauth_successful": "Ponowna autoryzacja powiodła się.",
+      "reconfigure_successful": "Rekonfiguracja powiodła się."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termostat"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Zasilanie"
+      },
+      "light": {
+        "name": "Oświetlenie"
+      },
+      "fan": {
+        "name": "Wentylator"
+      },
+      "steamer": {
+        "name": "Generator pary"
+      },
+      "aroma": {
+        "name": "Aromat"
+      },
+      "auto_light": {
+        "name": "Automatyczne światło"
+      },
+      "auto_fan": {
+        "name": "Automatyczny wentylator"
+      },
+      "dehumidifier": {
+        "name": "Osuszacz"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Temperatura"
+      },
+      "humidity": {
+        "name": "Wilgotność"
+      },
+      "target_temperature": {
+        "name": "Temperatura docelowa"
+      },
+      "remaining_time": {
+        "name": "Pozostały czas"
+      },
+      "heat_up_time": {
+        "name": "Czas nagrzewania"
+      },
+      "wifi_rssi": {
+        "name": "Sygnał WiFi"
+      },
+      "status_codes": {
+        "name": "Kody statusu"
+      },
+      "aroma_level": {
+        "name": "Poziom aromatu"
+      },
+      "ph1_relay_counter": {
+        "name": "Cykle przekaźnika fazy 1"
+      },
+      "ph2_relay_counter": {
+        "name": "Cykle przekaźnika fazy 2"
+      },
+      "ph3_relay_counter": {
+        "name": "Cykle przekaźnika fazy 3"
+      },
+      "heat_on_counter": {
+        "name": "Cykle grzania"
+      },
+      "steam_on_counter": {
+        "name": "Cykle pary"
+      },
+      "power": {
+        "name": "Moc"
+      },
+      "energy": {
+        "name": "Zużycie energii"
+      },
+      "last_session_duration": {
+        "name": "Czas ostatniej sesji"
+      },
+      "last_session_max_temp": {
+        "name": "Maks. temperatura ostatniej sesji"
+      },
+      "sessions_today": {
+        "name": "Sesje dzisiaj"
+      },
+      "temp_trend": {
+        "name": "Trend temperatury"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Drzwi"
+      },
+      "heat_on": {
+        "name": "Grzanie"
+      },
+      "steam_on": {
+        "name": "Para aktywna"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Docelowa wilgotność"
+      },
+      "aroma_level_set": {
+        "name": "Poziom aromatu"
+      },
+      "on_time": {
+        "name": "Czas sesji"
+      }
+    }
+  }
+}

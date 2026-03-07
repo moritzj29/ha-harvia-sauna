@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Szauna",
+        "description": "Válassza ki a vezérlő típusát és adja meg bejelentkezési adatait.",
+        "data": {
+          "username": "E-mail",
+          "password": "Jelszó",
+          "api_provider": "API szolgáltató"
+        }
+      },
+      "heater": {
+        "title": "Kályha beállítás",
+        "description": "Válassza ki a szaunakályha modelljét és teljesítményét. Ez segít a helyes eszközinformáció megjelenítésében, és később módosítható.",
+        "data": {
+          "heater_model": "Kályha modell",
+          "heater_power": "Kályha teljesítmény (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Harvia Szauna újrahitelesítés",
+        "description": "Adja meg frissített MyHarvia bejelentkezési adatait.",
+        "data": {
+          "username": "E-mail",
+          "password": "Jelszó"
+        }
+      },
+      "reconfigure": {
+        "title": "Harvia Szauna újrakonfigurálás",
+        "description": "Frissítse a kályha modelljét és teljesítményét.",
+        "data": {
+          "heater_model": "Kályha modell",
+          "heater_power": "Kályha teljesítmény (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Érvénytelen bejelentkezési adatok. Ellenőrizze MyHarvia alkalmazás bejelentkezését.",
+      "cannot_connect": "Nem lehet csatlakozni a MyHarvia felhőhöz. Próbálja újra később.",
+      "unknown": "Váratlan hiba történt."
+    },
+    "abort": {
+      "already_configured": "Ez a fiók már be van állítva.",
+      "reauth_successful": "Az újrahitelesítés sikeres volt.",
+      "reconfigure_successful": "Az újrakonfigurálás sikeres volt."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termosztát"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Kapcsoló"
+      },
+      "light": {
+        "name": "Világítás"
+      },
+      "fan": {
+        "name": "Ventilátor"
+      },
+      "steamer": {
+        "name": "Gőzgenerátor"
+      },
+      "aroma": {
+        "name": "Aroma"
+      },
+      "auto_light": {
+        "name": "Automatikus fény"
+      },
+      "auto_fan": {
+        "name": "Automatikus ventilátor"
+      },
+      "dehumidifier": {
+        "name": "Párátlanító"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Hőmérséklet"
+      },
+      "humidity": {
+        "name": "Páratartalom"
+      },
+      "target_temperature": {
+        "name": "Célhőmérséklet"
+      },
+      "remaining_time": {
+        "name": "Hátralévő idő"
+      },
+      "heat_up_time": {
+        "name": "Felfűtési idő"
+      },
+      "wifi_rssi": {
+        "name": "WiFi jel"
+      },
+      "status_codes": {
+        "name": "Állapotkódok"
+      },
+      "aroma_level": {
+        "name": "Aroma szint"
+      },
+      "ph1_relay_counter": {
+        "name": "1. fázis reléciklusok"
+      },
+      "ph2_relay_counter": {
+        "name": "2. fázis reléciklusok"
+      },
+      "ph3_relay_counter": {
+        "name": "3. fázis reléciklusok"
+      },
+      "heat_on_counter": {
+        "name": "Fűtési ciklusok"
+      },
+      "steam_on_counter": {
+        "name": "Gőzciklusok"
+      },
+      "power": {
+        "name": "Teljesítmény"
+      },
+      "energy": {
+        "name": "Energiafogyasztás"
+      },
+      "last_session_duration": {
+        "name": "Utolsó ülés időtartama"
+      },
+      "last_session_max_temp": {
+        "name": "Utolsó ülés max. hőmérséklet"
+      },
+      "sessions_today": {
+        "name": "Mai ülések"
+      },
+      "temp_trend": {
+        "name": "Hőmérséklet trend"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Ajtó"
+      },
+      "heat_on": {
+        "name": "Fűtés"
+      },
+      "steam_on": {
+        "name": "Gőz aktív"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Célpáratartalom"
+      },
+      "aroma_level_set": {
+        "name": "Aroma szint"
+      },
+      "on_time": {
+        "name": "Ülés idő"
+      }
+    }
+  }
+}

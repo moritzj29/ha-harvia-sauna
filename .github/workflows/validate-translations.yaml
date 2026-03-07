@@ -1,0 +1,69 @@
+name: Validate Translations
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "custom_components/harvia_sauna/translations/**"
+      - "custom_components/harvia_sauna/strings.json"
+  pull_request:
+    paths:
+      - "custom_components/harvia_sauna/translations/**"
+      - "custom_components/harvia_sauna/strings.json"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Check translation keys
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate translations
+        run: |
+          python3 - << 'PYEOF'
+          import json, os, sys
+
+          base = "custom_components/harvia_sauna"
+          trans_dir = os.path.join(base, "translations")
+
+          def flatten(d, prefix=""):
+              keys = set()
+              for k, v in d.items():
+                  full = f"{prefix}.{k}" if prefix else k
+                  if isinstance(v, dict): keys.update(flatten(v, full))
+                  else: keys.add(full)
+              return keys
+
+          # Load reference
+          with open(os.path.join(trans_dir, "en.json")) as f:
+              ref_keys = flatten(json.load(f))
+
+          # Check strings.json matches en.json
+          with open(os.path.join(base, "strings.json")) as f:
+              strings_keys = flatten(json.load(f))
+          if ref_keys != strings_keys:
+              print("❌ strings.json does not match en.json!")
+              print(f"   Missing: {ref_keys - strings_keys}")
+              print(f"   Extra: {strings_keys - ref_keys}")
+              sys.exit(1)
+
+          errors = 0
+          for f in sorted(os.listdir(trans_dir)):
+              if not f.endswith(".json"): continue
+              with open(os.path.join(trans_dir, f)) as fh:
+                  keys = flatten(json.load(fh))
+              missing = ref_keys - keys
+              extra = keys - ref_keys
+              if missing or extra:
+                  print(f"❌ {f}: missing={sorted(missing)}, extra={sorted(extra)}")
+                  errors += 1
+              else:
+                  print(f"✅ {f} ({len(keys)} keys)")
+
+          if errors:
+              print(f"\n{errors} file(s) with key mismatches")
+              sys.exit(1)
+          print(f"\n✅ All {len(os.listdir(trans_dir))} translations valid")
+          PYEOF
