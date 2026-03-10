@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Badstue",
+        "description": "Velg kontrollertype og oppgi innloggingsinformasjon.",
+        "data": {
+          "username": "E-post",
+          "password": "Passord",
+          "api_provider": "API-leverandør"
+        }
+      },
+      "heater": {
+        "title": "Ovnskonfigurasjon",
+        "description": "Velg badstueovnmodell og effekt. Dette hjelper med å vise riktig enhetsinformasjon og kan endres senere.",
+        "data": {
+          "heater_model": "Ovnsmodell",
+          "heater_power": "Ovnseffekt (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autentiser Harvia Badstue på nytt",
+        "description": "Oppgi oppdatert MyHarvia-innlogging.",
+        "data": {
+          "username": "E-post",
+          "password": "Passord"
+        }
+      },
+      "reconfigure": {
+        "title": "Rekonfigurer Harvia Badstue",
+        "description": "Oppdater ovnsmodell og effekt.",
+        "data": {
+          "heater_model": "Ovnsmodell",
+          "heater_power": "Ovnseffekt (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Ugyldig innlogging. Sjekk MyHarvia-appinnloggingen.",
+      "cannot_connect": "Kan ikke koble til MyHarvia-skyen. Prøv igjen senere.",
+      "unknown": "En uventet feil oppstod."
+    },
+    "abort": {
+      "already_configured": "Denne kontoen er allerede konfigurert.",
+      "reauth_successful": "Ny autentisering var vellykket.",
+      "reconfigure_successful": "Rekonfigurering var vellykket."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termostat"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Strøm"
+      },
+      "light": {
+        "name": "Lys"
+      },
+      "fan": {
+        "name": "Vifte"
+      },
+      "steamer": {
+        "name": "Dampgenerator"
+      },
+      "aroma": {
+        "name": "Aroma"
+      },
+      "auto_light": {
+        "name": "Automatisk lys"
+      },
+      "auto_fan": {
+        "name": "Automatisk vifte"
+      },
+      "dehumidifier": {
+        "name": "Avfukter"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Temperatur"
+      },
+      "humidity": {
+        "name": "Fuktighet"
+      },
+      "target_temperature": {
+        "name": "Måltemperatur"
+      },
+      "remaining_time": {
+        "name": "Gjenstående tid"
+      },
+      "heat_up_time": {
+        "name": "Oppvarmingstid"
+      },
+      "wifi_rssi": {
+        "name": "WiFi-signal"
+      },
+      "status_codes": {
+        "name": "Statuskoder"
+      },
+      "aroma_level": {
+        "name": "Aromanivå"
+      },
+      "ph1_relay_counter": {
+        "name": "Fase 1 relesykluser"
+      },
+      "ph2_relay_counter": {
+        "name": "Fase 2 relesykluser"
+      },
+      "ph3_relay_counter": {
+        "name": "Fase 3 relesykluser"
+      },
+      "heat_on_counter": {
+        "name": "Varmesykluser"
+      },
+      "steam_on_counter": {
+        "name": "Dampsykluser"
+      },
+      "power": {
+        "name": "Effekt"
+      },
+      "energy": {
+        "name": "Energiforbruk"
+      },
+      "last_session_duration": {
+        "name": "Siste øktvarighet"
+      },
+      "last_session_max_temp": {
+        "name": "Siste økt maks. temperatur"
+      },
+      "sessions_today": {
+        "name": "Økter i dag"
+      },
+      "temp_trend": {
+        "name": "Temperaturtrend"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Dør"
+      },
+      "heat_on": {
+        "name": "Oppvarming"
+      },
+      "steam_on": {
+        "name": "Damp aktiv"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Målfuktighet"
+      },
+      "aroma_level_set": {
+        "name": "Aromanivå"
+      },
+      "on_time": {
+        "name": "Økttid"
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+name: Bug Report
+description: Something isn't working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill in as much detail as possible.
+
+  - type: dropdown
+    id: controller
+    attributes:
+      label: Controller Type
+      options:
+        - Xenio WiFi (CX110 / CX001WIFI)
+        - Fenix (FX001XW / FX002XW)
+        - Other / Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: heater_model
+    attributes:
+      label: Heater Model & Power
+      placeholder: "e.g. Harvia Legend 10.8 kW"
+
+  - type: input
+    id: integration_version
+    attributes:
+      label: Integration Version
+      placeholder: "e.g. 2.3.0"
+    validations:
+      required: true
+
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant Version
+      placeholder: "e.g. 2026.3.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this?
+      placeholder: |
+        1. Go to ...
+        2. Click on ...
+        3. See error ...
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs
+      description: "Settings → System → Logs, filter for `harvia_sauna`"
+      render: text
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics JSON
+      description: "Settings → Devices & Services → Harvia Sauna → ⋮ → Download diagnostics. Paste the contents here (credentials are automatically redacted)."
+      render: json

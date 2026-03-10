@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Sauna",
+        "description": "Vyberte typ ovládacího panelu a zadejte přihlašovací údaje.",
+        "data": {
+          "username": "E-mail",
+          "password": "Heslo",
+          "api_provider": "Poskytovatel API"
+        }
+      },
+      "heater": {
+        "title": "Konfigurace topení",
+        "description": "Vyberte model a výkon saunových kamen. Pomáhá to zobrazit správné informace o zařízení a lze to později změnit.",
+        "data": {
+          "heater_model": "Model kamen",
+          "heater_power": "Výkon kamen (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Opětovná autorizace Harvia Sauna",
+        "description": "Zadejte aktualizované přihlašovací údaje MyHarvia.",
+        "data": {
+          "username": "E-mail",
+          "password": "Heslo"
+        }
+      },
+      "reconfigure": {
+        "title": "Překonfigurovat Harvia Sauna",
+        "description": "Aktualizujte model a výkon kamen.",
+        "data": {
+          "heater_model": "Model kamen",
+          "heater_power": "Výkon kamen (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Neplatné přihlašovací údaje. Ověřte přihlášení v aplikaci MyHarvia.",
+      "cannot_connect": "Nelze se připojit ke cloudu MyHarvia. Zkuste to později.",
+      "unknown": "Došlo k neočekávané chybě."
+    },
+    "abort": {
+      "already_configured": "Tento účet je již nakonfigurován.",
+      "reauth_successful": "Opětovná autorizace proběhla úspěšně.",
+      "reconfigure_successful": "Překonfigurování proběhlo úspěšně."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termostat"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Napájení"
+      },
+      "light": {
+        "name": "Osvětlení"
+      },
+      "fan": {
+        "name": "Ventilátor"
+      },
+      "steamer": {
+        "name": "Parní generátor"
+      },
+      "aroma": {
+        "name": "Aroma"
+      },
+      "auto_light": {
+        "name": "Automatické světlo"
+      },
+      "auto_fan": {
+        "name": "Automatický ventilátor"
+      },
+      "dehumidifier": {
+        "name": "Odvlhčovač"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Teplota"
+      },
+      "humidity": {
+        "name": "Vlhkost"
+      },
+      "target_temperature": {
+        "name": "Cílová teplota"
+      },
+      "remaining_time": {
+        "name": "Zbývající čas"
+      },
+      "heat_up_time": {
+        "name": "Doba zahřívání"
+      },
+      "wifi_rssi": {
+        "name": "WiFi signál"
+      },
+      "status_codes": {
+        "name": "Stavové kódy"
+      },
+      "aroma_level": {
+        "name": "Úroveň aromatu"
+      },
+      "ph1_relay_counter": {
+        "name": "Cykly relé fáze 1"
+      },
+      "ph2_relay_counter": {
+        "name": "Cykly relé fáze 2"
+      },
+      "ph3_relay_counter": {
+        "name": "Cykly relé fáze 3"
+      },
+      "heat_on_counter": {
+        "name": "Cykly topení"
+      },
+      "steam_on_counter": {
+        "name": "Cykly páry"
+      },
+      "power": {
+        "name": "Výkon"
+      },
+      "energy": {
+        "name": "Spotřeba energie"
+      },
+      "last_session_duration": {
+        "name": "Délka posledního sezení"
+      },
+      "last_session_max_temp": {
+        "name": "Max. teplota posledního sezení"
+      },
+      "sessions_today": {
+        "name": "Sezení dnes"
+      },
+      "temp_trend": {
+        "name": "Teplotní trend"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Dveře"
+      },
+      "heat_on": {
+        "name": "Topení"
+      },
+      "steam_on": {
+        "name": "Pára aktivní"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Cílová vlhkost"
+      },
+      "aroma_level_set": {
+        "name": "Úroveň aromatu"
+      },
+      "on_time": {
+        "name": "Doba sezení"
+      }
+    }
+  }
+}

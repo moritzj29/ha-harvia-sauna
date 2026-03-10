@@ -1,0 +1,40 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea? We'd love to hear it!
+
+  - type: dropdown
+    id: controller
+    attributes:
+      label: Controller Type
+      description: Which controller does this apply to?
+      options:
+        - Xenio WiFi (CX110 / CX001WIFI)
+        - Fenix (FX001XW / FX002XW)
+        - Both / General
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What would you like?
+      description: Describe the feature or improvement you'd like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use Case
+      description: How would you use this feature? What problem does it solve?
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any workarounds or alternative solutions?

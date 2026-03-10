@@ -4,12 +4,12 @@
 [![GitHub Release](https://img.shields.io/github/v/release/WiesiDeluxe/ha-harvia-sauna)](https://github.com/WiesiDeluxe/ha-harvia-sauna/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Custom Home Assistant integration for **Harvia sauna heaters** with Xenio WiFi control panels (CX110 / CX001WIFI), providing real-time monitoring and control through the MyHarvia cloud API.
+Custom Home Assistant integration for **Harvia sauna heaters** with **Xenio WiFi** (CX110 / CX001WIFI) and **Fenix** (FX001XW / FX002XW) control panels, providing real-time monitoring and control through the Harvia cloud APIs.
 
 ## Features
 
 - 🌡️ **Climate control** — thermostat with current/target temperature
-- 🔌 **Dual API provider support** — MyHarvia GraphQL (legacy) and Harvia REST/GraphQL API
+- 🔌 **Dual controller support** — Xenio WiFi (myHarvia) and Fenix (harvia.io)
 - ⚡ **Real-time updates** via WebSocket push — no polling delay
 - 📊 **Session tracking** — duration, max temperature, daily count
 - 🔋 **Energy monitoring** — power (W) and cumulative energy (kWh), persistent across restarts
@@ -18,12 +18,12 @@ Custom Home Assistant integration for **Harvia sauna heaters** with Xenio WiFi c
 - 🔧 **Custom service** `harvia_sauna.set_session` — configure sessions in one call
 - 📡 **HA Events** — `session_start` / `session_end` for automation triggers
 - 🔒 **Diagnostics** — anonymized debug export for troubleshooting
-- 🌍 **9 languages** — EN, DE, FI, IT, FR, SV, ES, JA, ET
+- 🌍 **19 languages** — EN, DE, FI, IT, FR, SV, ES, JA, ET, NL, NB, DA, PL, PT-BR, RU, ZH-Hans, KO, CS, HU
 
 ## Requirements
 
-- Harvia sauna heater with **Xenio WiFi** control panel
-- Active **MyHarvia** app account
+- A Harvia sauna heater with **Xenio WiFi** (CX110 / CX001WIFI) or **Fenix** (FX001XW / FX002XW) control panel
+- An active **MyHarvia** or **MyHarvia 2** app account
 - Internet connectivity (cloud API — no local control available)
 
 ## Installation
@@ -44,8 +44,10 @@ Custom Home Assistant integration for **Harvia sauna heaters** with Xenio WiFi c
 ## Setup
 
 1. **Settings** → **Devices & Services** → **Add Integration** → search "Harvia Sauna"
-2. Choose API provider (`MyHarvia Cloud` or `Harvia API`)
-3. Enter your Harvia credentials (email + password)
+2. Select your **API Provider**:
+   - **myHarvia (Xenio controller)** — for Xenio WiFi panels (CX110 / CX001WIFI)
+   - **myHarvia 2 - harvia.io (Fenix controller)** — for Fenix panels (FX001XW / FX002XW)
+3. Enter your credentials (same email/password as in the app)
 4. Select heater model and power rating (auto-detection attempted)
 
 To change model/power later: **⋮** → **Reconfigure**
@@ -117,12 +119,16 @@ The energy sensor uses `state_class: total_increasing` and works with the HA Ene
 ## Architecture
 
 ```
-Xenio WiFi Panel ──MQTT/TLS──▶ AWS IoT Core
+Xenio WiFi Panel ──MQTT/TLS──▶ AWS IoT Core (eu-west-1)
                                      ▲
 This Integration ──Cognito──▶ AWS AppSync (GraphQL + WebSocket)
+
+Fenix Panel ──MQTT/TLS──▶ AWS IoT Core (eu-central-1)
+                                  ▲
+This Integration ──REST──▶ harvia.io API (REST + GraphQL + WebSocket)
 ```
 
-**IoT class:** `cloud_push` — 4 WebSocket connections for real-time state + telemetry, REST polling fallback every 5 minutes.
+**IoT class:** `cloud_push` — real-time WebSocket subscriptions with REST polling fallback every 5 minutes. Both providers use the same coordinator, entities, and session tracking.
 
 ## Troubleshooting
 
@@ -137,3 +143,7 @@ This Integration ──Cognito──▶ AWS AppSync (GraphQL + WebSocket)
 ## License
 
 MIT License. This project is not affiliated with Harvia Oyj.
+
+---
+
+<p align="center"><i>Scripted in Austria 🇦🇹 — Happy Schwitzing! 🧖‍♂️🔥</i></p>

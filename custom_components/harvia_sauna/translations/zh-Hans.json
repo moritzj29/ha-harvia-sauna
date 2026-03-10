@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia 桑拿",
+        "description": "选择控制器类型并输入您的登录凭据。",
+        "data": {
+          "username": "电子邮件",
+          "password": "密码",
+          "api_provider": "API 提供商"
+        }
+      },
+      "heater": {
+        "title": "加热器配置",
+        "description": "选择桑拿加热器型号和功率。这有助于显示正确的设备信息，之后可以更改。",
+        "data": {
+          "heater_model": "加热器型号",
+          "heater_power": "加热器功率 (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新验证 Harvia 桑拿",
+        "description": "输入更新的 MyHarvia 登录凭据。",
+        "data": {
+          "username": "电子邮件",
+          "password": "密码"
+        }
+      },
+      "reconfigure": {
+        "title": "重新配置 Harvia 桑拿",
+        "description": "更新加热器型号和功率。",
+        "data": {
+          "heater_model": "加热器型号",
+          "heater_power": "加热器功率 (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "凭据无效。请检查您的 MyHarvia 应用登录信息。",
+      "cannot_connect": "无法连接到 MyHarvia 云。请稍后重试。",
+      "unknown": "发生意外错误。"
+    },
+    "abort": {
+      "already_configured": "此帐户已配置。",
+      "reauth_successful": "重新验证成功。",
+      "reconfigure_successful": "重新配置成功。"
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "温控器"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "电源"
+      },
+      "light": {
+        "name": "灯光"
+      },
+      "fan": {
+        "name": "风扇"
+      },
+      "steamer": {
+        "name": "蒸汽发生器"
+      },
+      "aroma": {
+        "name": "香氛"
+      },
+      "auto_light": {
+        "name": "自动灯光"
+      },
+      "auto_fan": {
+        "name": "自动风扇"
+      },
+      "dehumidifier": {
+        "name": "除湿器"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "温度"
+      },
+      "humidity": {
+        "name": "湿度"
+      },
+      "target_temperature": {
+        "name": "目标温度"
+      },
+      "remaining_time": {
+        "name": "剩余时间"
+      },
+      "heat_up_time": {
+        "name": "加热时间"
+      },
+      "wifi_rssi": {
+        "name": "WiFi 信号"
+      },
+      "status_codes": {
+        "name": "状态码"
+      },
+      "aroma_level": {
+        "name": "香氛等级"
+      },
+      "ph1_relay_counter": {
+        "name": "第1相继电器周期"
+      },
+      "ph2_relay_counter": {
+        "name": "第2相继电器周期"
+      },
+      "ph3_relay_counter": {
+        "name": "第3相继电器周期"
+      },
+      "heat_on_counter": {
+        "name": "加热周期"
+      },
+      "steam_on_counter": {
+        "name": "蒸汽周期"
+      },
+      "power": {
+        "name": "功率"
+      },
+      "energy": {
+        "name": "能耗"
+      },
+      "last_session_duration": {
+        "name": "上次使用时长"
+      },
+      "last_session_max_temp": {
+        "name": "上次使用最高温度"
+      },
+      "sessions_today": {
+        "name": "今日使用次数"
+      },
+      "temp_trend": {
+        "name": "温度趋势"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "门"
+      },
+      "heat_on": {
+        "name": "加热中"
+      },
+      "steam_on": {
+        "name": "蒸汽运行中"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "目标湿度"
+      },
+      "aroma_level_set": {
+        "name": "香氛等级"
+      },
+      "on_time": {
+        "name": "使用时间"
+      }
+    }
+  }
+}

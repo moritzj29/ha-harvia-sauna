@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Sauna",
+        "description": "Selecione o tipo de controlador e insira suas credenciais.",
+        "data": {
+          "username": "E-mail",
+          "password": "Senha",
+          "api_provider": "Provedor de API"
+        }
+      },
+      "heater": {
+        "title": "Configuração do aquecedor",
+        "description": "Selecione o modelo e a potência do aquecedor da sauna. Isso ajuda a exibir informações corretas do dispositivo e pode ser alterado posteriormente.",
+        "data": {
+          "heater_model": "Modelo do aquecedor",
+          "heater_power": "Potência do aquecedor (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reautenticar Harvia Sauna",
+        "description": "Insira suas credenciais atualizadas do MyHarvia.",
+        "data": {
+          "username": "E-mail",
+          "password": "Senha"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigurar Harvia Sauna",
+        "description": "Atualize o modelo e a potência do aquecedor.",
+        "data": {
+          "heater_model": "Modelo do aquecedor",
+          "heater_power": "Potência do aquecedor (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Credenciais inválidas. Verifique seu login no app MyHarvia.",
+      "cannot_connect": "Não foi possível conectar à nuvem MyHarvia. Tente novamente mais tarde.",
+      "unknown": "Ocorreu um erro inesperado."
+    },
+    "abort": {
+      "already_configured": "Esta conta já está configurada.",
+      "reauth_successful": "Reautenticação bem-sucedida.",
+      "reconfigure_successful": "Reconfiguração bem-sucedida."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Termostato"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Ligar/desligar"
+      },
+      "light": {
+        "name": "Luz"
+      },
+      "fan": {
+        "name": "Ventilador"
+      },
+      "steamer": {
+        "name": "Gerador de vapor"
+      },
+      "aroma": {
+        "name": "Aroma"
+      },
+      "auto_light": {
+        "name": "Luz automática"
+      },
+      "auto_fan": {
+        "name": "Ventilador automático"
+      },
+      "dehumidifier": {
+        "name": "Desumidificador"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Temperatura"
+      },
+      "humidity": {
+        "name": "Umidade"
+      },
+      "target_temperature": {
+        "name": "Temperatura alvo"
+      },
+      "remaining_time": {
+        "name": "Tempo restante"
+      },
+      "heat_up_time": {
+        "name": "Tempo de aquecimento"
+      },
+      "wifi_rssi": {
+        "name": "Sinal WiFi"
+      },
+      "status_codes": {
+        "name": "Códigos de status"
+      },
+      "aroma_level": {
+        "name": "Nível de aroma"
+      },
+      "ph1_relay_counter": {
+        "name": "Ciclos relé fase 1"
+      },
+      "ph2_relay_counter": {
+        "name": "Ciclos relé fase 2"
+      },
+      "ph3_relay_counter": {
+        "name": "Ciclos relé fase 3"
+      },
+      "heat_on_counter": {
+        "name": "Ciclos de aquecimento"
+      },
+      "steam_on_counter": {
+        "name": "Ciclos de vapor"
+      },
+      "power": {
+        "name": "Potência"
+      },
+      "energy": {
+        "name": "Consumo de energia"
+      },
+      "last_session_duration": {
+        "name": "Duração da última sessão"
+      },
+      "last_session_max_temp": {
+        "name": "Temperatura máxima da última sessão"
+      },
+      "sessions_today": {
+        "name": "Sessões hoje"
+      },
+      "temp_trend": {
+        "name": "Tendência de temperatura"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Porta"
+      },
+      "heat_on": {
+        "name": "Aquecimento"
+      },
+      "steam_on": {
+        "name": "Vapor ativo"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Umidade alvo"
+      },
+      "aroma_level_set": {
+        "name": "Nível de aroma"
+      },
+      "on_time": {
+        "name": "Tempo de sessão"
+      }
+    }
+  }
+}

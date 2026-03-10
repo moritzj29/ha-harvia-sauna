@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Сауна",
+        "description": "Выберите тип контроллера и введите учётные данные.",
+        "data": {
+          "username": "Электронная почта",
+          "password": "Пароль",
+          "api_provider": "Поставщик API"
+        }
+      },
+      "heater": {
+        "title": "Настройка печи",
+        "description": "Выберите модель и мощность печи для сауны. Это помогает отображать правильную информацию об устройстве и может быть изменено позже.",
+        "data": {
+          "heater_model": "Модель печи",
+          "heater_power": "Мощность печи (кВт)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Повторная авторизация Harvia Сауна",
+        "description": "Введите обновлённые учётные данные MyHarvia.",
+        "data": {
+          "username": "Электронная почта",
+          "password": "Пароль"
+        }
+      },
+      "reconfigure": {
+        "title": "Перенастройка Harvia Сауна",
+        "description": "Обновите модель и мощность печи.",
+        "data": {
+          "heater_model": "Модель печи",
+          "heater_power": "Мощность печи (кВт)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Неверные учётные данные. Проверьте логин в приложении MyHarvia.",
+      "cannot_connect": "Не удаётся подключиться к облаку MyHarvia. Попробуйте позже.",
+      "unknown": "Произошла непредвиденная ошибка."
+    },
+    "abort": {
+      "already_configured": "Этот аккаунт уже настроен.",
+      "reauth_successful": "Повторная авторизация прошла успешно.",
+      "reconfigure_successful": "Перенастройка прошла успешно."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Термостат"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Питание"
+      },
+      "light": {
+        "name": "Свет"
+      },
+      "fan": {
+        "name": "Вентилятор"
+      },
+      "steamer": {
+        "name": "Парогенератор"
+      },
+      "aroma": {
+        "name": "Аромат"
+      },
+      "auto_light": {
+        "name": "Автоматический свет"
+      },
+      "auto_fan": {
+        "name": "Автоматический вентилятор"
+      },
+      "dehumidifier": {
+        "name": "Осушитель"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Температура"
+      },
+      "humidity": {
+        "name": "Влажность"
+      },
+      "target_temperature": {
+        "name": "Целевая температура"
+      },
+      "remaining_time": {
+        "name": "Оставшееся время"
+      },
+      "heat_up_time": {
+        "name": "Время нагрева"
+      },
+      "wifi_rssi": {
+        "name": "Сигнал WiFi"
+      },
+      "status_codes": {
+        "name": "Коды состояния"
+      },
+      "aroma_level": {
+        "name": "Уровень аромата"
+      },
+      "ph1_relay_counter": {
+        "name": "Циклы реле фазы 1"
+      },
+      "ph2_relay_counter": {
+        "name": "Циклы реле фазы 2"
+      },
+      "ph3_relay_counter": {
+        "name": "Циклы реле фазы 3"
+      },
+      "heat_on_counter": {
+        "name": "Циклы нагрева"
+      },
+      "steam_on_counter": {
+        "name": "Циклы пара"
+      },
+      "power": {
+        "name": "Мощность"
+      },
+      "energy": {
+        "name": "Потребление энергии"
+      },
+      "last_session_duration": {
+        "name": "Продолжительность последнего сеанса"
+      },
+      "last_session_max_temp": {
+        "name": "Макс. температура последнего сеанса"
+      },
+      "sessions_today": {
+        "name": "Сеансы сегодня"
+      },
+      "temp_trend": {
+        "name": "Тренд температуры"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Дверь"
+      },
+      "heat_on": {
+        "name": "Нагрев"
+      },
+      "steam_on": {
+        "name": "Пар активен"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Целевая влажность"
+      },
+      "aroma_level_set": {
+        "name": "Уровень аромата"
+      },
+      "on_time": {
+        "name": "Время сеанса"
+      }
+    }
+  }
+}

@@ -3,16 +3,17 @@
     "step": {
       "user": {
         "title": "Harvia Sauna",
-        "description": "Choose API provider and enter your Harvia account credentials.",
+        "description": "Select your controller type and enter your credentials.",
         "data": {
           "api_provider": "API provider",
           "username": "Email",
-          "password": "Password"
+          "password": "Password",
+          "api_provider": "API Provider"
         }
       },
       "heater": {
-        "title": "Heater Setup",
-        "description": "Select your sauna heater model and power rating. The model is used for naming in the Home Assistant UI. The power value is used to calculate approximate absolute power in watts (W). You can change both later.",
+        "title": "Heater configuration",
+        "description": "Select your sauna heater model and power rating. This helps display correct device information and can be changed later.",
         "data": {
           "heater_model": "Heater model",
           "heater_power": "Heater power (kW)"
@@ -20,7 +21,7 @@
       },
       "reauth_confirm": {
         "title": "Re-authenticate Harvia Sauna",
-        "description": "Please enter your updated Harvia credentials.",
+        "description": "Enter your updated MyHarvia credentials.",
         "data": {
           "username": "Email",
           "password": "Password"
@@ -28,25 +29,22 @@
       },
       "reconfigure": {
         "title": "Reconfigure Harvia Sauna",
-        "description": "Update credentials, heater model and power. Password is only changed when you provide a new one.",
+        "description": "Update your heater model and power rating.",
         "data": {
-          "username": "Email",
-          "password": "New password (optional)",
           "heater_model": "Heater model",
           "heater_power": "Heater power (kW)"
         }
       }
     },
     "error": {
-      "invalid_auth": "Invalid credentials. Please check your Harvia account login.",
-      "cannot_connect": "Cannot connect to Harvia cloud API. Please try again later.",
-      "password_required": "Enter a new password when changing the email.",
+      "invalid_auth": "Invalid credentials. Please verify your MyHarvia app login.",
+      "cannot_connect": "Cannot connect to the MyHarvia cloud. Please try again later.",
       "unknown": "An unexpected error occurred."
     },
     "abort": {
       "already_configured": "This account is already configured.",
-      "reauth_successful": "Re-authentication successful.",
-      "reconfigure_successful": "Reconfiguration successful."
+      "reauth_successful": "Re-authentication was successful.",
+      "reconfigure_successful": "Reconfiguration was successful."
     }
   },
   "entity": {
@@ -107,49 +105,25 @@
         "name": "Aroma level"
       },
       "ph1_relay_counter": {
-        "name": "Phase 1 relay counter"
+        "name": "Phase 1 relay cycles"
       },
       "ph2_relay_counter": {
-        "name": "Phase 2 relay counter"
+        "name": "Phase 2 relay cycles"
       },
       "ph3_relay_counter": {
-        "name": "Phase 3 relay counter"
+        "name": "Phase 3 relay cycles"
       },
       "heat_on_counter": {
         "name": "Heater cycles"
       },
       "steam_on_counter": {
-        "name": "Steamer cycles"
+        "name": "Steam cycles"
       },
       "power": {
         "name": "Power"
       },
       "energy": {
-        "name": "Energy"
-      },
-      "heater_power_actual": {
-        "name": "Heater power (actual)"
-      },
-      "main_sensor_temp": {
-        "name": "Main sensor temperature"
-      },
-      "ext_sensor_temp": {
-        "name": "External sensor temperature"
-      },
-      "panel_temp": {
-        "name": "Panel temperature"
-      },
-      "total_sessions": {
-        "name": "Total sessions"
-      },
-      "total_bathing_hours": {
-        "name": "Total bathing hours"
-      },
-      "total_hours": {
-        "name": "Total operating hours"
-      },
-      "active_profile": {
-        "name": "Active profile"
+        "name": "Energy consumption"
       },
       "last_session_duration": {
         "name": "Last session duration"
@@ -169,16 +143,10 @@
         "name": "Door"
       },
       "heat_on": {
-        "name": "Heater active"
+        "name": "Heating"
       },
       "steam_on": {
-        "name": "Steamer active"
-      },
-      "safety_relay": {
-        "name": "Safety relay"
-      },
-      "screen_lock": {
-        "name": "Screen lock"
+        "name": "Steam active"
       }
     },
     "number": {
@@ -189,7 +157,7 @@
         "name": "Aroma level"
       },
       "on_time": {
-        "name": "Session duration"
+        "name": "Session time"
       }
     }
   }

@@ -1,0 +1,163 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Harvia Sauna",
+        "description": "Selecteer je controllertype en voer je inloggegevens in.",
+        "data": {
+          "username": "E-mail",
+          "password": "Wachtwoord",
+          "api_provider": "API-provider"
+        }
+      },
+      "heater": {
+        "title": "Verwarmerconfiguratie",
+        "description": "Selecteer je saunakachelmodel en vermogen. Dit helpt bij het weergeven van correcte apparaatinformatie en kan later worden gewijzigd.",
+        "data": {
+          "heater_model": "Kachelmodel",
+          "heater_power": "Kachelvermogen (kW)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Harvia Sauna opnieuw verifiëren",
+        "description": "Voer je bijgewerkte MyHarvia-inloggegevens in.",
+        "data": {
+          "username": "E-mail",
+          "password": "Wachtwoord"
+        }
+      },
+      "reconfigure": {
+        "title": "Harvia Sauna herconfigureren",
+        "description": "Werk je kachelmodel en vermogen bij.",
+        "data": {
+          "heater_model": "Kachelmodel",
+          "heater_power": "Kachelvermogen (kW)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Ongeldige inloggegevens. Controleer je MyHarvia-appinlog.",
+      "cannot_connect": "Kan geen verbinding maken met de MyHarvia-cloud. Probeer het later opnieuw.",
+      "unknown": "Er is een onverwachte fout opgetreden."
+    },
+    "abort": {
+      "already_configured": "Dit account is al geconfigureerd.",
+      "reauth_successful": "Opnieuw verifiëren is gelukt.",
+      "reconfigure_successful": "Herconfiguratie is gelukt."
+    }
+  },
+  "entity": {
+    "climate": {
+      "thermostat": {
+        "name": "Thermostaat"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Aan/uit"
+      },
+      "light": {
+        "name": "Verlichting"
+      },
+      "fan": {
+        "name": "Ventilator"
+      },
+      "steamer": {
+        "name": "Stoomgenerator"
+      },
+      "aroma": {
+        "name": "Aroma"
+      },
+      "auto_light": {
+        "name": "Automatisch licht"
+      },
+      "auto_fan": {
+        "name": "Automatische ventilator"
+      },
+      "dehumidifier": {
+        "name": "Ontvochtiger"
+      }
+    },
+    "sensor": {
+      "current_temperature": {
+        "name": "Temperatuur"
+      },
+      "humidity": {
+        "name": "Luchtvochtigheid"
+      },
+      "target_temperature": {
+        "name": "Doeltemperatuur"
+      },
+      "remaining_time": {
+        "name": "Resterende tijd"
+      },
+      "heat_up_time": {
+        "name": "Opwarmtijd"
+      },
+      "wifi_rssi": {
+        "name": "WiFi-signaal"
+      },
+      "status_codes": {
+        "name": "Statuscodes"
+      },
+      "aroma_level": {
+        "name": "Aromaniveau"
+      },
+      "ph1_relay_counter": {
+        "name": "Fase 1 relaiscycli"
+      },
+      "ph2_relay_counter": {
+        "name": "Fase 2 relaiscycli"
+      },
+      "ph3_relay_counter": {
+        "name": "Fase 3 relaiscycli"
+      },
+      "heat_on_counter": {
+        "name": "Verwarmingscycli"
+      },
+      "steam_on_counter": {
+        "name": "Stoomcycli"
+      },
+      "power": {
+        "name": "Vermogen"
+      },
+      "energy": {
+        "name": "Energieverbruik"
+      },
+      "last_session_duration": {
+        "name": "Laatste sessieduur"
+      },
+      "last_session_max_temp": {
+        "name": "Laatste sessie max. temperatuur"
+      },
+      "sessions_today": {
+        "name": "Sessies vandaag"
+      },
+      "temp_trend": {
+        "name": "Temperatuurtrend"
+      }
+    },
+    "binary_sensor": {
+      "door": {
+        "name": "Deur"
+      },
+      "heat_on": {
+        "name": "Verwarming"
+      },
+      "steam_on": {
+        "name": "Stoom actief"
+      }
+    },
+    "number": {
+      "target_humidity": {
+        "name": "Doelvochtigheid"
+      },
+      "aroma_level_set": {
+        "name": "Aromaniveau"
+      },
+      "on_time": {
+        "name": "Sessietijd"
+      }
+    }
+  }
+}
