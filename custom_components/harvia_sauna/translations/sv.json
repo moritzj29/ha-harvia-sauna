@@ -31,14 +31,17 @@
         "description": "Uppdatera bastuaggregatsmodell och effekt.",
         "data": {
           "heater_model": "Aggregatsmodell",
-          "heater_power": "Aggregatseffekt (kW)"
+          "heater_power": "Aggregatseffekt (kW)",
+          "password": "Nytt lösenord (lämna tomt om oförändrat)",
+          "username": "E-post"
         }
       }
     },
     "error": {
       "invalid_auth": "Ogiltiga inloggningsuppgifter. Kontrollera din MyHarvia-appinloggning.",
       "cannot_connect": "Kan inte ansluta till MyHarvia-molnet. Försök igen senare.",
-      "unknown": "Ett oväntat fel inträffade."
+      "unknown": "Ett oväntat fel inträffade.",
+      "password_required": "Lösenord krävs vid byte av användarnamn."
     },
     "abort": {
       "already_configured": "Detta konto är redan konfigurerat.",

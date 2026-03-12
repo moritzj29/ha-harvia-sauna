@@ -31,14 +31,17 @@
         "description": "Atualize o modelo e a potência do aquecedor.",
         "data": {
           "heater_model": "Modelo do aquecedor",
-          "heater_power": "Potência do aquecedor (kW)"
+          "heater_power": "Potência do aquecedor (kW)",
+          "password": "Nova senha (deixe em branco se inalterada)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Credenciais inválidas. Verifique seu login no app MyHarvia.",
       "cannot_connect": "Não foi possível conectar à nuvem MyHarvia. Tente novamente mais tarde.",
-      "unknown": "Ocorreu um erro inesperado."
+      "unknown": "Ocorreu um erro inesperado.",
+      "password_required": "Senha é obrigatória ao alterar o nome de usuário."
     },
     "abort": {
       "already_configured": "Esta conta já está configurada.",

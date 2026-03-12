@@ -31,14 +31,17 @@
         "description": "Werk je kachelmodel en vermogen bij.",
         "data": {
           "heater_model": "Kachelmodel",
-          "heater_power": "Kachelvermogen (kW)"
+          "heater_power": "Kachelvermogen (kW)",
+          "password": "Nieuw wachtwoord (leeg laten als ongewijzigd)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Ongeldige inloggegevens. Controleer je MyHarvia-appinlog.",
       "cannot_connect": "Kan geen verbinding maken met de MyHarvia-cloud. Probeer het later opnieuw.",
-      "unknown": "Er is een onverwachte fout opgetreden."
+      "unknown": "Er is een onverwachte fout opgetreden.",
+      "password_required": "Wachtwoord is vereist bij wijziging van gebruikersnaam."
     },
     "abort": {
       "already_configured": "Dit account is al geconfigureerd.",

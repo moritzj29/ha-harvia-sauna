@@ -31,14 +31,17 @@
         "description": "更新加热器型号和功率。",
         "data": {
           "heater_model": "加热器型号",
-          "heater_power": "加热器功率 (kW)"
+          "heater_power": "加热器功率 (kW)",
+          "password": "新密码（未更改请留空）",
+          "username": "电子邮件"
         }
       }
     },
     "error": {
       "invalid_auth": "凭据无效。请检查您的 MyHarvia 应用登录信息。",
       "cannot_connect": "无法连接到 MyHarvia 云。请稍后重试。",
-      "unknown": "发生意外错误。"
+      "unknown": "发生意外错误。",
+      "password_required": "更改用户名时需要密码。"
     },
     "abort": {
       "already_configured": "此帐户已配置。",

@@ -31,14 +31,17 @@
         "description": "Zaktualizuj model i moc pieca.",
         "data": {
           "heater_model": "Model pieca",
-          "heater_power": "Moc pieca (kW)"
+          "heater_power": "Moc pieca (kW)",
+          "password": "Nowe hasło (pozostaw puste jeśli bez zmian)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Nieprawidłowe dane logowania. Sprawdź login w aplikacji MyHarvia.",
       "cannot_connect": "Nie można połączyć się z chmurą MyHarvia. Spróbuj ponownie później.",
-      "unknown": "Wystąpił nieoczekiwany błąd."
+      "unknown": "Wystąpił nieoczekiwany błąd.",
+      "password_required": "Hasło jest wymagane przy zmianie nazwy użytkownika."
     },
     "abort": {
       "already_configured": "To konto jest już skonfigurowane.",

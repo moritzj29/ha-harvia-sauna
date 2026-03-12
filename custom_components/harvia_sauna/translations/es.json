@@ -31,14 +31,17 @@
         "description": "Actualizar el modelo y la potencia del calentador.",
         "data": {
           "heater_model": "Modelo de calentador",
-          "heater_power": "Potencia del calentador (kW)"
+          "heater_power": "Potencia del calentador (kW)",
+          "password": "Nueva contraseña (dejar vacío si no cambia)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Credenciales no válidas. Verifica tus datos de acceso de la app MyHarvia.",
       "cannot_connect": "No se puede conectar con la nube de MyHarvia. Inténtalo de nuevo más tarde.",
-      "unknown": "Se ha producido un error inesperado."
+      "unknown": "Se ha producido un error inesperado.",
+      "password_required": "La contraseña es obligatoria al cambiar el nombre de usuario."
     },
     "abort": {
       "already_configured": "Esta cuenta ya está configurada.",

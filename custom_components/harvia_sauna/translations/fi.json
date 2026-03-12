@@ -31,14 +31,17 @@
         "description": "Päivitä kiuasmalli ja teho.",
         "data": {
           "heater_model": "Kiuasmalli",
-          "heater_power": "Kiukaan teho (kW)"
+          "heater_power": "Kiukaan teho (kW)",
+          "password": "Uusi salasana (jätä tyhjäksi jos ei muutu)",
+          "username": "Sähköposti"
         }
       }
     },
     "error": {
       "invalid_auth": "Virheelliset kirjautumistiedot. Tarkista MyHarvia-sovelluksen kirjautumistiedot.",
       "cannot_connect": "Yhteyttä MyHarvia-pilvipalveluun ei saada. Yritä myöhemmin uudelleen.",
-      "unknown": "Odottamaton virhe."
+      "unknown": "Odottamaton virhe.",
+      "password_required": "Salasana vaaditaan kun käyttäjänimi vaihdetaan."
     },
     "abort": {
       "already_configured": "Tämä tili on jo määritetty.",

@@ -31,14 +31,17 @@
         "description": "히터 모델과 출력을 업데이트하세요.",
         "data": {
           "heater_model": "히터 모델",
-          "heater_power": "히터 출력 (kW)"
+          "heater_power": "히터 출력 (kW)",
+          "password": "새 비밀번호 (변경하지 않으면 비워두세요)",
+          "username": "이메일"
         }
       }
     },
     "error": {
       "invalid_auth": "잘못된 자격 증명입니다. MyHarvia 앱 로그인을 확인하세요.",
       "cannot_connect": "MyHarvia 클라우드에 연결할 수 없습니다. 나중에 다시 시도하세요.",
-      "unknown": "예상치 못한 오류가 발생했습니다."
+      "unknown": "예상치 못한 오류가 발생했습니다.",
+      "password_required": "사용자 이름 변경 시 비밀번호가 필요합니다."
     },
     "abort": {
       "already_configured": "이 계정은 이미 설정되어 있습니다.",

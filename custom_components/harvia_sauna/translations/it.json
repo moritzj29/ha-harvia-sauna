@@ -31,14 +31,17 @@
         "description": "Aggiorna il modello e la potenza della stufa.",
         "data": {
           "heater_model": "Modello stufa",
-          "heater_power": "Potenza stufa (kW)"
+          "heater_power": "Potenza stufa (kW)",
+          "password": "Nuova password (lasciare vuoto se invariata)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Credenziali non valide. Controlla i dati di accesso dell'app MyHarvia.",
       "cannot_connect": "Impossibile connettersi al cloud MyHarvia. Riprova più tardi.",
-      "unknown": "Si è verificato un errore imprevisto."
+      "unknown": "Si è verificato un errore imprevisto.",
+      "password_required": "La password è obbligatoria quando si cambia il nome utente."
     },
     "abort": {
       "already_configured": "Questo account è già configurato.",

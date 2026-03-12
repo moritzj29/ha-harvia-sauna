@@ -31,14 +31,17 @@
         "description": "Uuenda kerise mudelit ja võimsust.",
         "data": {
           "heater_model": "Kerise mudel",
-          "heater_power": "Kerise võimsus (kW)"
+          "heater_power": "Kerise võimsus (kW)",
+          "password": "Uus parool (jäta tühjaks kui ei muutu)",
+          "username": "E-post"
         }
       }
     },
     "error": {
       "invalid_auth": "Vigased sisselogimisandmed. Kontrolli oma MyHarvia rakenduse sisselogimist.",
       "cannot_connect": "MyHarvia pilvega ei saa ühendust. Proovi hiljem uuesti.",
-      "unknown": "Ilmnes ootamatu viga."
+      "unknown": "Ilmnes ootamatu viga.",
+      "password_required": "Parool on nõutav kasutajanime muutmisel."
     },
     "abort": {
       "already_configured": "See konto on juba seadistatud.",

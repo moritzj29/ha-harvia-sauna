@@ -31,14 +31,17 @@
         "description": "ヒーターモデルと出力を更新してください。",
         "data": {
           "heater_model": "ヒーターモデル",
-          "heater_power": "ヒーター出力 (kW)"
+          "heater_power": "ヒーター出力 (kW)",
+          "password": "新しいパスワード（変更しない場合は空欄）",
+          "username": "メールアドレス"
         }
       }
     },
     "error": {
       "invalid_auth": "認証情報が無効です。MyHarviaアプリのログイン情報を確認してください。",
       "cannot_connect": "MyHarviaクラウドに接続できません。後でもう一度お試しください。",
-      "unknown": "予期しないエラーが発生しました。"
+      "unknown": "予期しないエラーが発生しました。",
+      "password_required": "ユーザー名を変更する場合はパスワードが必要です。"
     },
     "abort": {
       "already_configured": "このアカウントは既に設定されています。",

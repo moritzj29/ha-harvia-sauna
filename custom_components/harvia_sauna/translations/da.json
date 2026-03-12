@@ -31,14 +31,17 @@
         "description": "Opdater din ovnmodel og effekt.",
         "data": {
           "heater_model": "Ovnmodel",
-          "heater_power": "Ovneffekt (kW)"
+          "heater_power": "Ovneffekt (kW)",
+          "password": "Ny adgangskode (lad stå tomt hvis uændret)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Ugyldige loginoplysninger. Kontroller dit MyHarvia-applogin.",
       "cannot_connect": "Kan ikke oprette forbindelse til MyHarvia-skyen. Prøv igen senere.",
-      "unknown": "En uventet fejl opstod."
+      "unknown": "En uventet fejl opstod.",
+      "password_required": "Adgangskode er påkrævet ved ændring af brugernavn."
     },
     "abort": {
       "already_configured": "Denne konto er allerede konfigureret.",
