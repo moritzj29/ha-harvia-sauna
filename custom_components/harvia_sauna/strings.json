@@ -5,7 +5,6 @@
         "title": "Harvia Sauna",
         "description": "Select your controller type and enter your credentials.",
         "data": {
-          "api_provider": "API provider",
           "username": "Email",
           "password": "Password",
           "api_provider": "API Provider"

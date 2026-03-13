@@ -5,7 +5,6 @@
         "title": "Harvia Sauna",
         "description": "Select your controller type and enter your credentials.",
         "data": {
-          "api_provider": "API provider",
           "username": "Email",
           "password": "Password",
           "api_provider": "API Provider"
@@ -21,7 +20,7 @@
       },
       "reauth_confirm": {
         "title": "Re-authenticate Harvia Sauna",
-        "description": "Enter your updated Harvia credentials.",
+        "description": "Enter your updated MyHarvia credentials.",
         "data": {
           "username": "Email",
           "password": "Password"
