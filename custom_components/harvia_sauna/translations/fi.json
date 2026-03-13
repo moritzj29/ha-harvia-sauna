@@ -31,14 +31,17 @@
         "description": "Päivitä kiuasmalli ja teho.",
         "data": {
           "heater_model": "Kiuasmalli",
-          "heater_power": "Kiukaan teho (kW)"
+          "heater_power": "Kiukaan teho (kW)",
+          "password": "Uusi salasana (jätä tyhjäksi jos ei muutu)",
+          "username": "Sähköposti"
         }
       }
     },
     "error": {
       "invalid_auth": "Virheelliset kirjautumistiedot. Tarkista MyHarvia-sovelluksen kirjautumistiedot.",
       "cannot_connect": "Yhteyttä MyHarvia-pilvipalveluun ei saada. Yritä myöhemmin uudelleen.",
-      "unknown": "Odottamaton virhe."
+      "unknown": "Odottamaton virhe.",
+      "password_required": "Salasana vaaditaan kun käyttäjänimi vaihdetaan."
     },
     "abort": {
       "already_configured": "Tämä tili on jo määritetty.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Lämpötilatrendi"
+      },
+      "heater_power_actual": {
+        "name": "Kiukaan todellinen teho"
+      },
+      "main_sensor_temp": {
+        "name": "Pääasensorin lämpötila"
+      },
+      "ext_sensor_temp": {
+        "name": "Ulkoisen anturin lämpötila"
+      },
+      "panel_temp": {
+        "name": "Paneelin lämpötila"
+      },
+      "total_sessions": {
+        "name": "Yhteensä istunnot"
+      },
+      "total_bathing_hours": {
+        "name": "Yhteensä saunomatuntit"
+      },
+      "total_hours": {
+        "name": "Yhteensä käyttötunnit"
+      },
+      "active_profile": {
+        "name": "Aktiivinen profiili"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Höyry päällä"
+      },
+      "safety_relay": {
+        "name": "Turvarele"
+      },
+      "screen_lock": {
+        "name": "Näytön lukitus"
+      },
+      "remote_allowed": {
+        "name": "Etähallinta sallittu"
       }
     },
     "number": {

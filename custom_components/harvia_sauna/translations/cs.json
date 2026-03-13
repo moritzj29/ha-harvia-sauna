@@ -31,14 +31,17 @@
         "description": "Aktualizujte model a výkon kamen.",
         "data": {
           "heater_model": "Model kamen",
-          "heater_power": "Výkon kamen (kW)"
+          "heater_power": "Výkon kamen (kW)",
+          "password": "Nové heslo (ponechte prázdné pokud se nemění)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Neplatné přihlašovací údaje. Ověřte přihlášení v aplikaci MyHarvia.",
       "cannot_connect": "Nelze se připojit ke cloudu MyHarvia. Zkuste to později.",
-      "unknown": "Došlo k neočekávané chybě."
+      "unknown": "Došlo k neočekávané chybě.",
+      "password_required": "Heslo je vyžadováno při změně uživatelského jména."
     },
     "abort": {
       "already_configured": "Tento účet je již nakonfigurován.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Teplotní trend"
+      },
+      "heater_power_actual": {
+        "name": "Aktuální výkon kamen"
+      },
+      "main_sensor_temp": {
+        "name": "Teplota hlavního senzoru"
+      },
+      "ext_sensor_temp": {
+        "name": "Teplota externího senzoru"
+      },
+      "panel_temp": {
+        "name": "Teplota panelu"
+      },
+      "total_sessions": {
+        "name": "Celkový počet sezení"
+      },
+      "total_bathing_hours": {
+        "name": "Celkové saunovací hodiny"
+      },
+      "total_hours": {
+        "name": "Celkové provozní hodiny"
+      },
+      "active_profile": {
+        "name": "Aktivní profil"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Pára aktivní"
+      },
+      "safety_relay": {
+        "name": "Bezpečnostní relé"
+      },
+      "screen_lock": {
+        "name": "Zámek obrazovky"
+      },
+      "remote_allowed": {
+        "name": "Vzdálené ovládání povoleno"
       }
     },
     "number": {

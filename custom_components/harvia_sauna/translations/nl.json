@@ -31,14 +31,17 @@
         "description": "Werk je kachelmodel en vermogen bij.",
         "data": {
           "heater_model": "Kachelmodel",
-          "heater_power": "Kachelvermogen (kW)"
+          "heater_power": "Kachelvermogen (kW)",
+          "password": "Nieuw wachtwoord (leeg laten als ongewijzigd)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Ongeldige inloggegevens. Controleer je MyHarvia-appinlog.",
       "cannot_connect": "Kan geen verbinding maken met de MyHarvia-cloud. Probeer het later opnieuw.",
-      "unknown": "Er is een onverwachte fout opgetreden."
+      "unknown": "Er is een onverwachte fout opgetreden.",
+      "password_required": "Wachtwoord is vereist bij wijziging van gebruikersnaam."
     },
     "abort": {
       "already_configured": "Dit account is al geconfigureerd.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Temperatuurtrend"
+      },
+      "heater_power_actual": {
+        "name": "Actuele vermogen"
+      },
+      "main_sensor_temp": {
+        "name": "Temperatuur hoofdsensor"
+      },
+      "ext_sensor_temp": {
+        "name": "Temperatuur externe sensor"
+      },
+      "panel_temp": {
+        "name": "Paneeltemperatuur"
+      },
+      "total_sessions": {
+        "name": "Totaal aantal sessies"
+      },
+      "total_bathing_hours": {
+        "name": "Totaal baduren"
+      },
+      "total_hours": {
+        "name": "Totale bedrijfsuren"
+      },
+      "active_profile": {
+        "name": "Actief profiel"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Stoom actief"
+      },
+      "safety_relay": {
+        "name": "Veiligheidsrelé"
+      },
+      "screen_lock": {
+        "name": "Schermvergrendeling"
+      },
+      "remote_allowed": {
+        "name": "Extern bedienen toegestaan"
       }
     },
     "number": {

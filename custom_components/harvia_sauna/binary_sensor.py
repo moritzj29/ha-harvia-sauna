@@ -71,6 +71,13 @@ BINARY_SENSOR_DESCRIPTIONS: list[HarviaBinarySensorDescription] = [
         entity_category=EntityCategory.DIAGNOSTIC,
         value_fn=lambda d: d.screen_lock,
     ),
+    HarviaBinarySensorDescription(
+        key="remote_allowed",
+        translation_key="remote_allowed",
+        icon="mdi:remote",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        value_fn=lambda d: d.remote_allowed,
+    ),
 ]
 
 

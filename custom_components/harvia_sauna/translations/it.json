@@ -31,14 +31,17 @@
         "description": "Aggiorna il modello e la potenza della stufa.",
         "data": {
           "heater_model": "Modello stufa",
-          "heater_power": "Potenza stufa (kW)"
+          "heater_power": "Potenza stufa (kW)",
+          "password": "Nuova password (lasciare vuoto se invariata)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Credenziali non valide. Controlla i dati di accesso dell'app MyHarvia.",
       "cannot_connect": "Impossibile connettersi al cloud MyHarvia. Riprova più tardi.",
-      "unknown": "Si è verificato un errore imprevisto."
+      "unknown": "Si è verificato un errore imprevisto.",
+      "password_required": "La password è obbligatoria quando si cambia il nome utente."
     },
     "abort": {
       "already_configured": "Questo account è già configurato.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Tendenza temperatura"
+      },
+      "heater_power_actual": {
+        "name": "Potenza attuale del riscaldatore"
+      },
+      "main_sensor_temp": {
+        "name": "Temperatura sensore principale"
+      },
+      "ext_sensor_temp": {
+        "name": "Temperatura sensore esterno"
+      },
+      "panel_temp": {
+        "name": "Temperatura pannello"
+      },
+      "total_sessions": {
+        "name": "Totale sessioni"
+      },
+      "total_bathing_hours": {
+        "name": "Totale ore di sauna"
+      },
+      "total_hours": {
+        "name": "Totale ore di funzionamento"
+      },
+      "active_profile": {
+        "name": "Profilo attivo"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Vapore attivo"
+      },
+      "safety_relay": {
+        "name": "Relè di sicurezza"
+      },
+      "screen_lock": {
+        "name": "Blocco schermo"
+      },
+      "remote_allowed": {
+        "name": "Controllo remoto consentito"
       }
     },
     "number": {

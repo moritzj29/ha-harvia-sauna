@@ -31,14 +31,17 @@
         "description": "ヒーターモデルと出力を更新してください。",
         "data": {
           "heater_model": "ヒーターモデル",
-          "heater_power": "ヒーター出力 (kW)"
+          "heater_power": "ヒーター出力 (kW)",
+          "password": "新しいパスワード（変更しない場合は空欄）",
+          "username": "メールアドレス"
         }
       }
     },
     "error": {
       "invalid_auth": "認証情報が無効です。MyHarviaアプリのログイン情報を確認してください。",
       "cannot_connect": "MyHarviaクラウドに接続できません。後でもう一度お試しください。",
-      "unknown": "予期しないエラーが発生しました。"
+      "unknown": "予期しないエラーが発生しました。",
+      "password_required": "ユーザー名を変更する場合はパスワードが必要です。"
     },
     "abort": {
       "already_configured": "このアカウントは既に設定されています。",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "温度トレンド"
+      },
+      "heater_power_actual": {
+        "name": "現在のヒーター出力"
+      },
+      "main_sensor_temp": {
+        "name": "メインセンサーの温度"
+      },
+      "ext_sensor_temp": {
+        "name": "外部センサーの温度"
+      },
+      "panel_temp": {
+        "name": "パネル温度"
+      },
+      "total_sessions": {
+        "name": "合計セッション数"
+      },
+      "total_bathing_hours": {
+        "name": "合計サウナ時間"
+      },
+      "total_hours": {
+        "name": "合計稼働時間"
+      },
+      "active_profile": {
+        "name": "アクティブプロフィール"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "スチーム稼働中"
+      },
+      "safety_relay": {
+        "name": "安全リレー"
+      },
+      "screen_lock": {
+        "name": "スクリーンロック"
+      },
+      "remote_allowed": {
+        "name": "リモート制御許可"
       }
     },
     "number": {

@@ -31,14 +31,17 @@
         "description": "Oppdater ovnsmodell og effekt.",
         "data": {
           "heater_model": "Ovnsmodell",
-          "heater_power": "Ovnseffekt (kW)"
+          "heater_power": "Ovnseffekt (kW)",
+          "password": "Nytt passord (la stå tomt hvis uendret)",
+          "username": "E-post"
         }
       }
     },
     "error": {
       "invalid_auth": "Ugyldig innlogging. Sjekk MyHarvia-appinnloggingen.",
       "cannot_connect": "Kan ikke koble til MyHarvia-skyen. Prøv igjen senere.",
-      "unknown": "En uventet feil oppstod."
+      "unknown": "En uventet feil oppstod.",
+      "password_required": "Passord er påkrevd ved endring av brukernavn."
     },
     "abort": {
       "already_configured": "Denne kontoen er allerede konfigurert.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Temperaturtrend"
+      },
+      "heater_power_actual": {
+        "name": "Aktuell effekt"
+      },
+      "main_sensor_temp": {
+        "name": "Hovedsensorens temperatur"
+      },
+      "ext_sensor_temp": {
+        "name": "Ekstern sensorens temperatur"
+      },
+      "panel_temp": {
+        "name": "Paneltemperatur"
+      },
+      "total_sessions": {
+        "name": "Totalt antall sesjoner"
+      },
+      "total_bathing_hours": {
+        "name": "Total badetid"
+      },
+      "total_hours": {
+        "name": "Total drifttid"
+      },
+      "active_profile": {
+        "name": "Aktiv profil"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Damp aktiv"
+      },
+      "safety_relay": {
+        "name": "Sikkerhetsrelé"
+      },
+      "screen_lock": {
+        "name": "Skjermlås"
+      },
+      "remote_allowed": {
+        "name": "Fjernstyring tillatt"
       }
     },
     "number": {

@@ -31,14 +31,17 @@
         "description": "Frissítse a kályha modelljét és teljesítményét.",
         "data": {
           "heater_model": "Kályha modell",
-          "heater_power": "Kályha teljesítmény (kW)"
+          "heater_power": "Kályha teljesítmény (kW)",
+          "password": "Új jelszó (hagyja üresen ha nem változik)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Érvénytelen bejelentkezési adatok. Ellenőrizze MyHarvia alkalmazás bejelentkezését.",
       "cannot_connect": "Nem lehet csatlakozni a MyHarvia felhőhöz. Próbálja újra később.",
-      "unknown": "Váratlan hiba történt."
+      "unknown": "Váratlan hiba történt.",
+      "password_required": "Jelszó szükséges a felhasználónév módosításakor."
     },
     "abort": {
       "already_configured": "Ez a fiók már be van állítva.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Hőmérséklet trend"
+      },
+      "heater_power_actual": {
+        "name": "Aktuális fűtési teljesítmény"
+      },
+      "main_sensor_temp": {
+        "name": "Fő szenzor hőmérséklete"
+      },
+      "ext_sensor_temp": {
+        "name": "Külső szenzor hőmérsékete"
+      },
+      "panel_temp": {
+        "name": "Panel hőmérséklete"
+      },
+      "total_sessions": {
+        "name": "Összes ülés"
+      },
+      "total_bathing_hours": {
+        "name": "Összes fürdési óra"
+      },
+      "total_hours": {
+        "name": "Összes működési óra"
+      },
+      "active_profile": {
+        "name": "Aktív profil"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Gőz aktív"
+      },
+      "safety_relay": {
+        "name": "Biztonsági relé"
+      },
+      "screen_lock": {
+        "name": "Képernyőzár"
+      },
+      "remote_allowed": {
+        "name": "Távirányítás engedélyezett"
       }
     },
     "number": {

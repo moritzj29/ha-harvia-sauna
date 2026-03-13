@@ -138,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Temperaturtrend"
+      },
+      "heater_power_actual": {
+        "name": "Aktuelle Ofenleistung"
+      },
+      "main_sensor_temp": {
+        "name": "Hauptsensor Temperatur"
+      },
+      "ext_sensor_temp": {
+        "name": "Externer Sensor Temperatur"
+      },
+      "panel_temp": {
+        "name": "Panel-Temperatur"
+      },
+      "total_sessions": {
+        "name": "Gesamtsitzungen"
+      },
+      "total_bathing_hours": {
+        "name": "Gesamte Badestunden"
+      },
+      "total_hours": {
+        "name": "Gesamtbetriebsstunden"
+      },
+      "active_profile": {
+        "name": "Aktives Profil"
       }
     },
     "binary_sensor": {
@@ -149,6 +173,15 @@
       },
       "steam_on": {
         "name": "Dampf aktiv"
+      },
+      "safety_relay": {
+        "name": "Sicherheitsrelais"
+      },
+      "screen_lock": {
+        "name": "Bildschirmsperre"
+      },
+      "remote_allowed": {
+        "name": "Fernsteuerung erlaubt"
       }
     },
     "number": {

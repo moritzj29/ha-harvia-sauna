@@ -31,14 +31,17 @@
         "description": "Actualizar el modelo y la potencia del calentador.",
         "data": {
           "heater_model": "Modelo de calentador",
-          "heater_power": "Potencia del calentador (kW)"
+          "heater_power": "Potencia del calentador (kW)",
+          "password": "Nueva contraseña (dejar vacío si no cambia)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Credenciales no válidas. Verifica tus datos de acceso de la app MyHarvia.",
       "cannot_connect": "No se puede conectar con la nube de MyHarvia. Inténtalo de nuevo más tarde.",
-      "unknown": "Se ha producido un error inesperado."
+      "unknown": "Se ha producido un error inesperado.",
+      "password_required": "La contraseña es obligatoria al cambiar el nombre de usuario."
     },
     "abort": {
       "already_configured": "Esta cuenta ya está configurada.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Tendencia de temperatura"
+      },
+      "heater_power_actual": {
+        "name": "Potencia de calentador actual"
+      },
+      "main_sensor_temp": {
+        "name": "Temperatura del sensor principal"
+      },
+      "ext_sensor_temp": {
+        "name": "Temperatura del sensor externo"
+      },
+      "panel_temp": {
+        "name": "Temperatura del panel"
+      },
+      "total_sessions": {
+        "name": "Total de sesiones"
+      },
+      "total_bathing_hours": {
+        "name": "Total de horas de baño"
+      },
+      "total_hours": {
+        "name": "Total de horas"
+      },
+      "active_profile": {
+        "name": "Perfil activo"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Vapor activo"
+      },
+      "safety_relay": {
+        "name": "Relé de seguridad"
+      },
+      "screen_lock": {
+        "name": "Bloqueo de pantalla"
+      },
+      "remote_allowed": {
+        "name": "Control remoto permitido"
       }
     },
     "number": {

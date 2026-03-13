@@ -31,14 +31,17 @@
         "description": "Uuenda kerise mudelit ja võimsust.",
         "data": {
           "heater_model": "Kerise mudel",
-          "heater_power": "Kerise võimsus (kW)"
+          "heater_power": "Kerise võimsus (kW)",
+          "password": "Uus parool (jäta tühjaks kui ei muutu)",
+          "username": "E-post"
         }
       }
     },
     "error": {
       "invalid_auth": "Vigased sisselogimisandmed. Kontrolli oma MyHarvia rakenduse sisselogimist.",
       "cannot_connect": "MyHarvia pilvega ei saa ühendust. Proovi hiljem uuesti.",
-      "unknown": "Ilmnes ootamatu viga."
+      "unknown": "Ilmnes ootamatu viga.",
+      "password_required": "Parool on nõutav kasutajanime muutmisel."
     },
     "abort": {
       "already_configured": "See konto on juba seadistatud.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Temperatuuritrend"
+      },
+      "heater_power_actual": {
+        "name": "Aktiivne küttevõimsus"
+      },
+      "main_sensor_temp": {
+        "name": "Peamise anduri temperatuur"
+      },
+      "ext_sensor_temp": {
+        "name": "Välise anduri temperatuur"
+      },
+      "panel_temp": {
+        "name": "Paneeli temperatuur"
+      },
+      "total_sessions": {
+        "name": "Kokku seanseid"
+      },
+      "total_bathing_hours": {
+        "name": "Kokku saunamise tunde"
+      },
+      "total_hours": {
+        "name": "Kokku töötunde"
+      },
+      "active_profile": {
+        "name": "Aktiivne profil"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Aur aktiivne"
+      },
+      "safety_relay": {
+        "name": "Ohutusrele"
+      },
+      "screen_lock": {
+        "name": "Ekraanilukk"
+      },
+      "remote_allowed": {
+        "name": "Kaugjuhtimine lubatud"
       }
     },
     "number": {

@@ -31,14 +31,17 @@
         "description": "Mettre à jour le modèle et la puissance du poêle.",
         "data": {
           "heater_model": "Modèle de poêle",
-          "heater_power": "Puissance du poêle (kW)"
+          "heater_power": "Puissance du poêle (kW)",
+          "password": "Nouveau mot de passe (laisser vide si inchangé)",
+          "username": "E-mail"
         }
       }
     },
     "error": {
       "invalid_auth": "Identifiants invalides. Vérifiez vos données de connexion MyHarvia.",
       "cannot_connect": "Connexion au cloud MyHarvia impossible. Veuillez réessayer plus tard.",
-      "unknown": "Une erreur inattendue s'est produite."
+      "unknown": "Une erreur inattendue s'est produite.",
+      "password_required": "Le mot de passe est requis lors du changement de nom d'utilisateur."
     },
     "abort": {
       "already_configured": "Ce compte est déjà configuré.",
@@ -135,6 +138,30 @@
       },
       "temp_trend": {
         "name": "Tendance température"
+      },
+      "heater_power_actual": {
+        "name": "Puissance actuelle du chauffage"
+      },
+      "main_sensor_temp": {
+        "name": "Température du capteur principal"
+      },
+      "ext_sensor_temp": {
+        "name": "Température du capteur externe"
+      },
+      "panel_temp": {
+        "name": "Température du panneau"
+      },
+      "total_sessions": {
+        "name": "Total des sessions"
+      },
+      "total_bathing_hours": {
+        "name": "Total des heures de bain"
+      },
+      "total_hours": {
+        "name": "Total des heures"
+      },
+      "active_profile": {
+        "name": "Profil actif"
       }
     },
     "binary_sensor": {
@@ -146,6 +173,15 @@
       },
       "steam_on": {
         "name": "Vapeur active"
+      },
+      "safety_relay": {
+        "name": "Relais de sécurité"
+      },
+      "screen_lock": {
+        "name": "Verrouillage de l'écran"
+      },
+      "remote_allowed": {
+        "name": "Contrôle à distance autorisé"
       }
     },
     "number": {
