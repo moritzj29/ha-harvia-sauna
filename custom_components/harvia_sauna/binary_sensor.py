@@ -16,7 +16,7 @@ from homeassistant.const import EntityCategory
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import DOMAIN
+from .const import API_PROVIDER_HARVIAIO, API_PROVIDER_MYHARVIA, CONF_API_PROVIDER, DOMAIN
 from .coordinator import HarviaDeviceData, HarviaSaunaCoordinator
 from .entity import HarviaBaseEntity
 
@@ -28,6 +28,7 @@ class HarviaBinarySensorDescription(BinarySensorEntityDescription):
     """Describe a Harvia binary sensor entity."""
 
     value_fn: Callable[[HarviaDeviceData], bool | None]
+    providers: tuple[str, ...] | None = None  # None = all providers
 
 
 BINARY_SENSOR_DESCRIPTIONS: list[HarviaBinarySensorDescription] = [
@@ -61,6 +62,7 @@ BINARY_SENSOR_DESCRIPTIONS: list[HarviaBinarySensorDescription] = [
         icon="mdi:electric-switch",
         entity_category=EntityCategory.DIAGNOSTIC,
         entity_registry_enabled_default=False,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.safety_relay,
     ),
     HarviaBinarySensorDescription(
@@ -69,6 +71,7 @@ BINARY_SENSOR_DESCRIPTIONS: list[HarviaBinarySensorDescription] = [
         device_class=BinarySensorDeviceClass.LOCK,
         icon="mdi:lock",
         entity_category=EntityCategory.DIAGNOSTIC,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.screen_lock,
     ),
     HarviaBinarySensorDescription(
@@ -76,6 +79,7 @@ BINARY_SENSOR_DESCRIPTIONS: list[HarviaBinarySensorDescription] = [
         translation_key="remote_allowed",
         icon="mdi:remote",
         entity_category=EntityCategory.DIAGNOSTIC,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.remote_allowed,
     ),
 ]
@@ -88,10 +92,14 @@ async def async_setup_entry(
 ) -> None:
     """Set up Harvia binary sensor entities."""
     coordinator: HarviaSaunaCoordinator = hass.data[DOMAIN][entry.entry_id]
+    provider = entry.data.get(CONF_API_PROVIDER, API_PROVIDER_MYHARVIA)
 
     entities = []
     for device_id in coordinator.data.devices:
         for description in BINARY_SENSOR_DESCRIPTIONS:
+            # Skip entities not matching the configured API provider
+            if description.providers is not None and provider not in description.providers:
+                continue
             entities.append(
                 HarviaBinarySensor(coordinator, device_id, description)
             )

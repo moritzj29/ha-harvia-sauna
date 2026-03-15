@@ -20,6 +20,9 @@ WS_MAX_RECONNECT_DELAY = 60  # Max Backoff bei Reconnect
 # Coordinator
 SCAN_INTERVAL_FALLBACK = 300  # 5 Minuten Fallback-Polling falls WebSocket ausfällt
 
+# Session tracking
+SESSION_MIN_DURATION_SEC = 300  # 5 Minuten Mindestdauer damit ein An/Aus als Session zählt
+
 # Config keys
 CONF_HEATER_MODEL = "heater_model"
 CONF_HEATER_POWER = "heater_power"

@@ -26,7 +26,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.restore_state import RestoreEntity
 
-from .const import DOMAIN
+from .const import API_PROVIDER_HARVIAIO, API_PROVIDER_MYHARVIA, CONF_API_PROVIDER, DOMAIN
 from .coordinator import HarviaDeviceData, HarviaSaunaCoordinator
 from .entity import HarviaBaseEntity
 
@@ -38,6 +38,7 @@ class HarviaSensorDescription(SensorEntityDescription):
     """Describe a Harvia sensor entity."""
 
     value_fn: Callable[[HarviaDeviceData], int | float | str | None]
+    providers: tuple[str, ...] | None = None  # None = all providers
 
 
 SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
@@ -199,6 +200,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         state_class=SensorStateClass.MEASUREMENT,
         icon="mdi:flash",
         entity_category=EntityCategory.DIAGNOSTIC,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.heater_power_actual if d.heater_power_actual > 0 else None,
     ),
     HarviaSensorDescription(
@@ -210,6 +212,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:thermometer",
         entity_category=EntityCategory.DIAGNOSTIC,
         entity_registry_enabled_default=False,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.main_sensor_temp,
     ),
     HarviaSensorDescription(
@@ -221,6 +224,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:thermometer-low",
         entity_category=EntityCategory.DIAGNOSTIC,
         entity_registry_enabled_default=False,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.ext_sensor_temp,
     ),
     HarviaSensorDescription(
@@ -232,6 +236,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:thermometer-lines",
         entity_category=EntityCategory.DIAGNOSTIC,
         entity_registry_enabled_default=False,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.panel_temp,
     ),
     HarviaSensorDescription(
@@ -240,6 +245,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:counter",
         state_class=SensorStateClass.TOTAL_INCREASING,
         entity_category=EntityCategory.DIAGNOSTIC,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.total_sessions if d.total_sessions > 0 else None,
     ),
     HarviaSensorDescription(
@@ -250,6 +256,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:clock-time-eight",
         state_class=SensorStateClass.TOTAL_INCREASING,
         entity_category=EntityCategory.DIAGNOSTIC,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.total_bathing_hours if d.total_bathing_hours > 0 else None,
     ),
     HarviaSensorDescription(
@@ -260,6 +267,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:clock-outline",
         state_class=SensorStateClass.TOTAL_INCREASING,
         entity_category=EntityCategory.DIAGNOSTIC,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.total_hours if d.total_hours > 0 else None,
     ),
     # Active profile status (read-only)
@@ -269,6 +277,7 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
         icon="mdi:tune",
         entity_category=EntityCategory.CONFIG,
         entity_registry_enabled_default=False,
+        providers=(API_PROVIDER_HARVIAIO,),
         value_fn=lambda d: d.active_profile if d.active_profile >= 0 else None,
     ),
     # Session tracking
@@ -307,6 +316,9 @@ SENSOR_DESCRIPTIONS: list[HarviaSensorDescription] = [
 ]
 
 
+RESTORABLE_SESSION_KEYS = {"last_session_duration", "last_session_max_temp", "sessions_today"}
+
+
 async def async_setup_entry(
     hass: HomeAssistant,
     entry: ConfigEntry,
@@ -314,13 +326,22 @@ async def async_setup_entry(
 ) -> None:
     """Set up Harvia sensor entities."""
     coordinator: HarviaSaunaCoordinator = hass.data[DOMAIN][entry.entry_id]
+    provider = entry.data.get(CONF_API_PROVIDER, API_PROVIDER_MYHARVIA)
 
     entities = []
     for device_id in coordinator.data.devices:
         for description in SENSOR_DESCRIPTIONS:
+            # Skip entities not matching the configured API provider
+            if description.providers is not None and provider not in description.providers:
+                continue
+
             if description.key == "energy":
                 entities.append(
                     HarviaEnergySensor(coordinator, device_id, description)
+                )
+            elif description.key in RESTORABLE_SESSION_KEYS:
+                entities.append(
+                    HarviaSessionSensor(coordinator, device_id, description)
                 )
             else:
                 entities.append(
@@ -377,3 +398,43 @@ class HarviaEnergySensor(HarviaSensor, RestoreEntity):
             _LOGGER.debug(
                 "Restored energy value: %.3f kWh", restored_value
             )
+
+
+class HarviaSessionSensor(HarviaSensor, RestoreEntity):
+    """Session sensor with state restoration across HA restarts/reloads."""
+
+    async def async_added_to_hass(self) -> None:
+        """Restore last known session value on startup."""
+        await super().async_added_to_hass()
+
+        last_state = await self.async_get_last_state()
+        if last_state is None or last_state.state in ("unknown", "unavailable"):
+            return
+
+        try:
+            restored_value = float(last_state.state)
+        except (ValueError, TypeError):
+            return
+
+        device = self._get_device_data()
+        if device is None:
+            return
+
+        key = self.entity_description.key
+
+        if key == "last_session_duration" and device.last_session_duration == 0.0:
+            device.last_session_duration = restored_value
+            _LOGGER.debug("Restored last_session_duration: %.1f min", restored_value)
+
+        elif key == "last_session_max_temp" and device.last_session_max_temp == 0.0:
+            device.last_session_max_temp = restored_value
+            _LOGGER.debug("Restored last_session_max_temp: %.0f°C", restored_value)
+
+        elif key == "sessions_today" and device.sessions_today == 0:
+            # Only restore if same day (otherwise the midnight reset is correct)
+            import datetime as dt
+            today = dt.date.today().isoformat()
+            if device._sessions_today_date == "" or device._sessions_today_date == today:
+                device.sessions_today = int(restored_value)
+                device._sessions_today_date = today
+                _LOGGER.debug("Restored sessions_today: %d", int(restored_value))
