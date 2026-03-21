@@ -21,6 +21,7 @@ from .const import (
     EVENT_SESSION_END,
     EVENT_SESSION_START,
     SCAN_INTERVAL_FALLBACK,
+    SESSION_MIN_DURATION_SEC,
 )
 from .errors import HarviaAuthError, HarviaConnectionError
 
@@ -462,7 +463,11 @@ def _apply_telemetry_data(device: HarviaDeviceData, data: dict[str, Any]) -> Non
 def _update_session_tracking(
     hass: HomeAssistant, device: HarviaDeviceData
 ) -> None:
-    """Track sauna session start/end and fire HA events."""
+    """Track sauna session start/end and fire HA events.
+
+    Sessions shorter than SESSION_MIN_DURATION_SEC are ignored to filter
+    out WebSocket state bounces and door-sensor rapid toggles.
+    """
     import datetime as dt
 
     # Reset daily counter at midnight
@@ -478,7 +483,6 @@ def _update_session_tracking(
         device._session_active = True
         device._session_start_time = now
         device._session_max_temp = device.current_temp or 0.0
-        device.sessions_today += 1
 
         hass.bus.async_fire(EVENT_SESSION_START, {
             "device_id": device.device_id,
@@ -498,21 +502,33 @@ def _update_session_tracking(
         device._session_active = False
 
         if device._session_start_time is not None:
-            duration_min = (now - device._session_start_time) / 60.0
-            device.last_session_duration = round(duration_min, 1)
-            device.last_session_max_temp = device._session_max_temp
+            duration_sec = now - device._session_start_time
+            duration_min = duration_sec / 60.0
 
-            hass.bus.async_fire(EVENT_SESSION_END, {
-                "device_id": device.device_id,
-                "duration_min": device.last_session_duration,
-                "max_temp": device.last_session_max_temp,
-            })
-            _LOGGER.debug(
-                "Sauna session ended (device %s): %.1f min, max %.0f°C",
-                device.device_id,
-                device.last_session_duration,
-                device.last_session_max_temp,
-            )
+            if duration_sec >= SESSION_MIN_DURATION_SEC:
+                # Real session — update public values
+                device.last_session_duration = round(duration_min, 1)
+                device.last_session_max_temp = device._session_max_temp
+                device.sessions_today += 1
+
+                hass.bus.async_fire(EVENT_SESSION_END, {
+                    "device_id": device.device_id,
+                    "duration_min": device.last_session_duration,
+                    "max_temp": device.last_session_max_temp,
+                })
+                _LOGGER.debug(
+                    "Sauna session ended (device %s): %.1f min, max %.0f°C",
+                    device.device_id,
+                    device.last_session_duration,
+                    device.last_session_max_temp,
+                )
+            else:
+                _LOGGER.debug(
+                    "Sauna session too short (%.0fs < %ds), ignoring bounce (device %s)",
+                    duration_sec,
+                    SESSION_MIN_DURATION_SEC,
+                    device.device_id,
+                )
 
         device._session_start_time = None
         device._session_max_temp = 0.0
