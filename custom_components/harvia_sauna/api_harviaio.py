@@ -521,10 +521,19 @@ def _normalize_state_payload(device_id: str, payload: dict[str, Any]) -> dict[st
         "remoteAllowed": "remoteAllowed",
         "demoMode": "demoMode",
         "screenLock": "screenLock",
+        # Device metadata from state feed
+        "signalStrength": "wifiRSSI",
     }
     for source, target in key_map.items():
         if source in state:
             normalized[target] = state[source]
+
+    # Extract heater.on as active (heater is a nested object in state)
+    if "heater" in state and isinstance(state["heater"], dict):
+        heater_val = state["heater"].get("on")
+        if heater_val is not None:
+            normalized["active"] = heater_val
+
     _LOGGER.debug("Normalized state payload for %s: raw=%s -> normalized=%s", device_id, state, normalized)
     return normalized
 
